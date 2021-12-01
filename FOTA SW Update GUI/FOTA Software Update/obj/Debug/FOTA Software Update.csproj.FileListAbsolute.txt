@@ -9,3 +9,14 @@ E:\Desktop App Exercises\FOTA Software Update\FOTA Software Update\obj\Debug\FOT
 E:\Desktop App Exercises\FOTA Software Update\FOTA Software Update\obj\Debug\FOTA Software Update.csproj.CoreCompileInputs.cache
 E:\Desktop App Exercises\FOTA Software Update\FOTA Software Update\obj\Debug\FOTA Software Update.exe
 E:\Desktop App Exercises\FOTA Software Update\FOTA Software Update\obj\Debug\FOTA Software Update.pdb
+C:\Users\LAPTOP\Source\Repos\FOTA-GP\FOTA SW Update GUI\FOTA Software Update\bin\Debug\FOTA Software Update.exe.config
+C:\Users\LAPTOP\Source\Repos\FOTA-GP\FOTA SW Update GUI\FOTA Software Update\bin\Debug\FOTA Software Update.exe
+C:\Users\LAPTOP\Source\Repos\FOTA-GP\FOTA SW Update GUI\FOTA Software Update\bin\Debug\FOTA Software Update.pdb
+C:\Users\LAPTOP\Source\Repos\FOTA-GP\FOTA SW Update GUI\FOTA Software Update\obj\Debug\FOTA Software Update.csproj.AssemblyReference.cache
+C:\Users\LAPTOP\Source\Repos\FOTA-GP\FOTA SW Update GUI\FOTA Software Update\obj\Debug\FOTA Software Update.csproj.SuggestedBindingRedirects.cache
+C:\Users\LAPTOP\Source\Repos\FOTA-GP\FOTA SW Update GUI\FOTA Software Update\obj\Debug\FOTA_Software_Update.Form1.resources
+C:\Users\LAPTOP\Source\Repos\FOTA-GP\FOTA SW Update GUI\FOTA Software Update\obj\Debug\FOTA_Software_Update.Properties.Resources.resources
+C:\Users\LAPTOP\Source\Repos\FOTA-GP\FOTA SW Update GUI\FOTA Software Update\obj\Debug\FOTA Software Update.csproj.GenerateResource.cache
+C:\Users\LAPTOP\Source\Repos\FOTA-GP\FOTA SW Update GUI\FOTA Software Update\obj\Debug\FOTA Software Update.csproj.CoreCompileInputs.cache
+C:\Users\LAPTOP\Source\Repos\FOTA-GP\FOTA SW Update GUI\FOTA Software Update\obj\Debug\FOTA Software Update.exe
+C:\Users\LAPTOP\Source\Repos\FOTA-GP\FOTA SW Update GUI\FOTA Software Update\obj\Debug\FOTA Software Update.pdb

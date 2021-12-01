@@ -65,6 +65,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -78,6 +79,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\intelligent-vehicle-cockpit-and-wireless-communication-network-concept-692837788_2312x1301-1.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_01_4_100x100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Valeo_Logo.svg_100x100.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
