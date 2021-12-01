@@ -43,8 +43,6 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.panel15 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel17 = new System.Windows.Forms.Panel();
             this.panel18 = new System.Windows.Forms.Panel();
@@ -71,6 +69,9 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.progressBar = new CircularProgressBar.CircularProgressBar();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -89,6 +90,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -108,8 +110,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.panel2.Controls.Add(this.panel15);
-            this.panel2.Controls.Add(this.panel14);
+            this.panel2.Controls.Add(this.groupBox3);
             this.panel2.Controls.Add(this.panel10);
             this.panel2.Controls.Add(this.panel9);
             this.panel2.Controls.Add(this.panel8);
@@ -234,20 +235,6 @@
             this.panel10.Size = new System.Drawing.Size(195, 186);
             this.panel10.TabIndex = 5;
             // 
-            // panel14
-            // 
-            this.panel14.Location = new System.Drawing.Point(250, 381);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(135, 30);
-            this.panel14.TabIndex = 7;
-            // 
-            // panel15
-            // 
-            this.panel15.Location = new System.Drawing.Point(250, 442);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(135, 30);
-            this.panel15.TabIndex = 8;
-            // 
             // panel11
             // 
             this.panel11.Controls.Add(this.button4);
@@ -257,9 +244,9 @@
             this.panel11.Controls.Add(this.panel18);
             this.panel11.Controls.Add(this.panel17);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel11.Location = new System.Drawing.Point(3, 16);
+            this.panel11.Location = new System.Drawing.Point(3, 22);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(135, 266);
+            this.panel11.Size = new System.Drawing.Size(135, 260);
             this.panel11.TabIndex = 0;
             // 
             // panel17
@@ -318,7 +305,7 @@
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.panel11);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.groupBox1.Location = new System.Drawing.Point(1, 0);
             this.groupBox1.Name = "groupBox1";
@@ -385,7 +372,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(144, 21);
+            this.textBox1.Location = new System.Drawing.Point(144, 25);
             this.textBox1.MinimumSize = new System.Drawing.Size(224, 30);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
@@ -394,7 +381,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(144, 61);
+            this.textBox2.Location = new System.Drawing.Point(144, 64);
             this.textBox2.MinimumSize = new System.Drawing.Size(224, 30);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
@@ -403,7 +390,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(144, 143);
+            this.textBox4.Location = new System.Drawing.Point(144, 146);
             this.textBox4.MinimumSize = new System.Drawing.Size(224, 30);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
@@ -412,7 +399,7 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(144, 183);
+            this.textBox5.Location = new System.Drawing.Point(144, 186);
             this.textBox5.MinimumSize = new System.Drawing.Size(224, 30);
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
@@ -425,7 +412,7 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(144, 102);
+            this.richTextBox1.Location = new System.Drawing.Point(144, 105);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(224, 30);
             this.richTextBox1.TabIndex = 8;
@@ -460,7 +447,7 @@
             // button2
             // 
             this.button2.Image = global::FOTA_Software_Update.Properties.Resources.icons8_add_file_20;
-            this.button2.Location = new System.Drawing.Point(374, 103);
+            this.button2.Location = new System.Drawing.Point(374, 106);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(29, 29);
             this.button2.TabIndex = 6;
@@ -475,7 +462,7 @@
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.Image = global::FOTA_Software_Update.Properties.Resources.icons8_clear_symbol_30;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(3, 220);
+            this.button4.Location = new System.Drawing.Point(2, 214);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(119, 44);
             this.button4.TabIndex = 10;
@@ -546,6 +533,43 @@
             this.progressBar.TextMargin = new System.Windows.Forms.Padding(8, 8, 0, 0);
             this.progressBar.Value = 68;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.radioButton2);
+            this.groupBox3.Controls.Add(this.radioButton1);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.groupBox3.Location = new System.Drawing.Point(214, 334);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(206, 189);
+            this.groupBox3.TabIndex = 9;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Module Type";
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton1.Location = new System.Drawing.Point(9, 59);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(179, 24);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Dashboard System";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton2.Location = new System.Drawing.Point(9, 123);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(175, 24);
+            this.radioButton2.TabIndex = 1;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Navigation System";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -584,6 +608,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -606,8 +632,6 @@
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Panel panel15;
-        private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Panel panel13;
@@ -631,6 +655,9 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.GroupBox groupBox2;
         private CircularProgressBar.CircularProgressBar progressBar;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
     }
 }
 
