@@ -63,6 +63,66 @@ namespace FOTA_Software_Update.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_add_file_20 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-add-file-20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_add_file_25 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-add-file-25", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_add_file_27 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-add-file-27", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_add_file_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-add-file-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_clear_symbol_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-clear-symbol-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_upload_30__2_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-upload-30 (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap intelligent_vehicle_cockpit_and_wireless_communication_network_concept_692837788_2312x1301_1 {
             get {
                 object obj = ResourceManager.GetObject("intelligent-vehicle-cockpit-and-wireless-communication-network-concept-692837788_" +

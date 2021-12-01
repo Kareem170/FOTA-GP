@@ -20,3 +20,8 @@ C:\Users\LAPTOP\Source\Repos\FOTA-GP\FOTA SW Update GUI\FOTA Software Update\obj
 C:\Users\LAPTOP\Source\Repos\FOTA-GP\FOTA SW Update GUI\FOTA Software Update\obj\Debug\FOTA Software Update.csproj.CoreCompileInputs.cache
 C:\Users\LAPTOP\Source\Repos\FOTA-GP\FOTA SW Update GUI\FOTA Software Update\obj\Debug\FOTA Software Update.exe
 C:\Users\LAPTOP\Source\Repos\FOTA-GP\FOTA SW Update GUI\FOTA Software Update\obj\Debug\FOTA Software Update.pdb
+C:\Users\LAPTOP\Source\Repos\FOTA-GP\FOTA SW Update GUI\FOTA Software Update\bin\Debug\CircularProgressBar.dll
+C:\Users\LAPTOP\Source\Repos\FOTA-GP\FOTA SW Update GUI\FOTA Software Update\bin\Debug\WinFormAnimation.dll
+C:\Users\LAPTOP\Source\Repos\FOTA-GP\FOTA SW Update GUI\FOTA Software Update\bin\Debug\CircularProgressBar.xml
+C:\Users\LAPTOP\Source\Repos\FOTA-GP\FOTA SW Update GUI\FOTA Software Update\bin\Debug\WinFormAnimation.xml
+C:\Users\LAPTOP\Source\Repos\FOTA-GP\FOTA SW Update GUI\FOTA Software Update\obj\Debug\FOTA Software Update.csproj.CopyComplete
