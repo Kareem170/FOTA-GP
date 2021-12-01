@@ -1,0 +1,11 @@
+E:\Desktop App Exercises\FOTA Software Update\FOTA Software Update\bin\Debug\FOTA Software Update.exe.config
+E:\Desktop App Exercises\FOTA Software Update\FOTA Software Update\bin\Debug\FOTA Software Update.exe
+E:\Desktop App Exercises\FOTA Software Update\FOTA Software Update\bin\Debug\FOTA Software Update.pdb
+E:\Desktop App Exercises\FOTA Software Update\FOTA Software Update\obj\Debug\FOTA Software Update.csproj.AssemblyReference.cache
+E:\Desktop App Exercises\FOTA Software Update\FOTA Software Update\obj\Debug\FOTA Software Update.csproj.SuggestedBindingRedirects.cache
+E:\Desktop App Exercises\FOTA Software Update\FOTA Software Update\obj\Debug\FOTA_Software_Update.Form1.resources
+E:\Desktop App Exercises\FOTA Software Update\FOTA Software Update\obj\Debug\FOTA_Software_Update.Properties.Resources.resources
+E:\Desktop App Exercises\FOTA Software Update\FOTA Software Update\obj\Debug\FOTA Software Update.csproj.GenerateResource.cache
+E:\Desktop App Exercises\FOTA Software Update\FOTA Software Update\obj\Debug\FOTA Software Update.csproj.CoreCompileInputs.cache
+E:\Desktop App Exercises\FOTA Software Update\FOTA Software Update\obj\Debug\FOTA Software Update.exe
+E:\Desktop App Exercises\FOTA Software Update\FOTA Software Update\obj\Debug\FOTA Software Update.pdb
