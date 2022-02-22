@@ -32,7 +32,7 @@ STATIC uint8 Port_Status = PORT_NOT_INITIALIZED;
 
 static uint8 getPortId(Port_PinType PinId_Port){
 	if ( PinId_Port < PORT_PD2 ) {				/* for STM32F40xx LQFP64 pin out */
-		return PinPos_Port / NUM_OF_PINS_PER_PORT;
+		return PinId_Port / NUM_OF_PINS_PER_PORT;
 
 	}else if (PinId_Port == PORT_PD2){
 		return PORTD;
@@ -60,10 +60,10 @@ static uint8 getPinPos(Port_PinType PinId_Port){
 	}
 }
 
-static volatile GPIO_TypeDef* getPortBasePtr(Port_PinType PortPinId)
+static volatile GPIO_TypeDef* getPortBasePtr(Port_PinType PinId_Port)
 {
 	/* calculating the PortId from the Port-PinId index */
-	uint8 PortId = getPortId(PortPinId);
+	uint8 PortId = getPortId(PinId_Port);
 
 	switch(PortId){
 	case  PORTA:
