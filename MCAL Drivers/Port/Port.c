@@ -42,16 +42,16 @@ static uint8 getPortId(Port_PinType PinPos_Port){
 	}
 }
 
-/* return pi Id of the given PinId*/
-static uint8 getPinPos(Port_PinType PinPos_Port){
-	if ( PinPos_Port < PORT_PD2 ) {				/* for STM32F40xx LQFP64 pin out */
-		return PinPos_Port % NUM_OF_PINS_PER_PORT;
+/* return pin position of the given PinId*/
+static uint8 getPinPos(Port_PinType PinId_Port){
+	if ( PinId_Port < PORT_PD2 ) {				/* for STM32F40xx LQFP64 pin out */
+		return PinId_Port % NUM_OF_PINS_PER_PORT;
 
-	}else if (PinPos_Port == PORT_PD2){
+	}else if (PinId_Port == PORT_PD2){
 		return 2;
 
 	}else{
-		if (PinPos_Port == PORT_PH0){
+		if (PinId_Port == PORT_PH0){
 			return 0;
 		}
 		else {								/* port PH1*/
@@ -60,10 +60,10 @@ static uint8 getPinPos(Port_PinType PinPos_Port){
 	}
 }
 
-static volatile GPIO_TypeDef* getPortBasePtr(Port_PinType PortPinPos)
+static volatile GPIO_TypeDef* getPortBasePtr(Port_PinType PortPinId)
 {
 	/* calculating the PortId from the Port-PinId index */
-	uint8 PortId = getPortId(PortPinPos);
+	uint8 PortId = getPortId(PortPinId);
 
 	switch(PortId){
 	case  PORTA:
