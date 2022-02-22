@@ -74,8 +74,8 @@
 #define PORT_INITIALIZED                (1U)
 #define PORT_NOT_INITIALIZED            (0U)
 
-#define UNCHANGEABLE	0x00U
-#define CHANGEABLE		0x01U
+#define UNCHANGEABLE		0x00U
+#define CHANGEABLE			0x01U
 
 /* Number of pins in configuration register per port */
 #define CONFG_PINS_P_PORT_2		(2U)

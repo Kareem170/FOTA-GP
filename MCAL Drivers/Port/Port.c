@@ -30,11 +30,11 @@
 /* port initial status */
 STATIC uint8 Port_Status = PORT_NOT_INITIALIZED;
 
-static uint8 getPortId(Port_PinType PinPos_Port){
-	if ( PinPos_Port < PORT_PD2 ) {				/* for STM32F40xx LQFP64 pin out */
+static uint8 getPortId(Port_PinType PinId_Port){
+	if ( PinId_Port < PORT_PD2 ) {				/* for STM32F40xx LQFP64 pin out */
 		return PinPos_Port / NUM_OF_PINS_PER_PORT;
 
-	}else if (PinPos_Port == PORT_PD2){
+	}else if (PinId_Port == PORT_PD2){
 		return PORTD;
 
 	}else{
