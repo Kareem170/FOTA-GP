@@ -4,7 +4,7 @@
  *
  * File Name: Port_Cfg.h
  *
- * Description: Pre-Compile Configuration Header file for STM32F405RG Micro-controller - Port Driver
+ * Description: Pre-Compile Configuration Header file for STM32F4xx Micro-controller - Port Driver
  *
  * Author: Boules Rufael
  *
