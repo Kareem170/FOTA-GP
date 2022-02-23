@@ -4,7 +4,7 @@
  *
  * File Name: Port_PBcfg.c
  *
- * Description: Post Build Configuration Source file for STM32F405RG Micro-controller - Port Driver
+ * Description: Post Build Configuration Source file for STM32F4xx Micro-controller - Port Driver
  *
  * Author: Boules Rufael
  *
