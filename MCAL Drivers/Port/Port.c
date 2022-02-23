@@ -4,7 +4,7 @@
  *
  * File Name: Port.c
  *
- * Description: Source file for STM32F405RG Micro-controller - Port Driver.
+ * Description: Source file for STM32F4xx Micro-controller - Port Driver.
  *
  * Author: Boules Rufael
  *
