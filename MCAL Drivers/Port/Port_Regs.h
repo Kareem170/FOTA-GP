@@ -4,7 +4,7 @@
  *
  * File Name: Port_Regs.h
  *
- * Description: Header file for STM32F405RG Micro-controller - Port Driver Registers
+ * Description: Header file for STM32F4xx Micro-controller - Port Driver Registers
  *
  * Author: Boules Rufael
  *
