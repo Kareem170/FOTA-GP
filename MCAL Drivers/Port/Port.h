@@ -4,7 +4,7 @@
  *
  * File Name: Port.h
  *
- * Description: Header file for STM32F405RG Micro-controller - Port Driver.
+ * Description: Header file for STM32F40xx Micro-controller - Port Driver.
  *
  * Author: Boules Rufael
  *
