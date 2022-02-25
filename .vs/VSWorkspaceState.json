@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\CAN Driver",
+    "\\CAN Driver\\can"
   ],
+  "SelectedNode": "\\CAN Driver\\can\\can.c",
   "PreviewInSolutionExplorer": false
 }

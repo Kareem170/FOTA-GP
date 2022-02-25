@@ -53,7 +53,7 @@ void Can_Init(
 uint32 wait_ack = 0x00000000;
 
 /* Exit from sleep mode */
-CLEAR_BIT(*(volatile uint32 *)((volatile uint8 *)CANX_BASE_ADDRESS + CAN_MCR_OFFSET) ,CAN_MCR_SLEEP);
+CLEAR_BIT(*(volatile uint32*)((volatile uint8*)CANX_BASE_ADDRESS + CAN_MCR_OFFSET) ,CAN_MCR_SLEEP);
 
 /* Request initialisation */
 SET_BIT(*(volatile uint32 *)((volatile uint8 *)CANX_BASE_ADDRESS + CAN_MCR_OFFSET) ,CAN_MCR_INRQ);
@@ -120,7 +120,7 @@ if ((*(volatile uint32 *)((volatile uint8 *)CANX_BASE_ADDRESS + CAN_MSR_OFFSET) 
     }
     else
     {
-       CLAER_BIT(*(volatile uint32 *)((volatile uint8 *)CANX_BASE_ADDRESS + CAN_MCR_OFFSET) ,CAN_MCR_RFLM);
+       CLEAR_BIT(*(volatile uint32 *)((volatile uint8 *)CANX_BASE_ADDRESS + CAN_MCR_OFFSET) ,CAN_MCR_RFLM);
     }
 
     /* Set the transmit FIFO priority */

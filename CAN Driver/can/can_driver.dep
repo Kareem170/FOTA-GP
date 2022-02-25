@@ -6,54 +6,94 @@
   <configuration>
     <name>Debug</name>
     <outputs>
-      <file>$PROJ_DIR$\Platform_Types.h</file>
-      <file>$PROJ_DIR$\Std_Types.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\can_pbcfg.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\can_pbcfg.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\cstartup_M.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\can.pbi</file>
+      <file>$PROJ_DIR$\can_cfg.h</file>
+      <file>$PROJ_DIR$\main.c</file>
       <file>$PROJ_DIR$\Debug\Obj\can.o</file>
-      <file>$PROJ_DIR$\Debug\Obj\Det.o</file>
-      <file>$PROJ_DIR$\can_pbcfg.c</file>
-      <file>$PROJ_DIR$\can.h</file>
-      <file>$PROJ_DIR$\can_regs.h</file>
-      <file>$PROJ_DIR$\Common_Macros.h</file>
-      <file>$PROJ_DIR$\Debug\Exe\c.out</file>
-      <file>$PROJ_DIR$\Det.h</file>
       <file>$PROJ_DIR$\Debug\Obj\cstartup_M.o</file>
+      <file>$PROJ_DIR$\can_pbcfg.c</file>
+      <file>$PROJ_DIR$\cstartup_M.c</file>
+      <file>$PROJ_DIR$\Det.h</file>
+      <file>$PROJ_DIR$\Compiler.h</file>
+      <file>$PROJ_DIR$\Platform_Types.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\Det.o</file>
+      <file>$PROJ_DIR$\Debug\Exe\c.out</file>
       <file>$PROJ_DIR$\Debug\Obj\Det.pbi</file>
       <file>$PROJ_DIR$\Debug\Obj\main.o</file>
       <file>$PROJ_DIR$\Debug\Obj\can_driver.pbd</file>
+      <file>$PROJ_DIR$\can.h</file>
+      <file>$PROJ_DIR$\Common_Macros.h</file>
+      <file>$PROJ_DIR$\Std_Types.h</file>
       <file>$PROJ_DIR$\can.c</file>
-      <file>$PROJ_DIR$\can_cfg.h</file>
+      <file>$PROJ_DIR$\can_regs.h</file>
       <file>$PROJ_DIR$\Det.c</file>
-      <file>$PROJ_DIR$\Compiler.h</file>
-      <file>$PROJ_DIR$\main.c</file>
-      <file>$PROJ_DIR$\cstartup_M.c</file>
-      <file>$PROJ_DIR$\Debug\Obj\can.pbi</file>
-      <file>$PROJ_DIR$\Debug\Obj\cstartup_M.pbi</file>
-      <file>$PROJ_DIR$\Debug\Obj\can_pbcfg.o</file>
-      <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
-      <file>$PROJ_DIR$\Debug\Obj\can_pbcfg.pbi</file>
-      <file>D:\TrueStudio.c</file>
-      <file>D:\TrueStudio.h</file>
+      <file>D:\edit.c</file>
+      <file>$TOOLKIT_DIR$\lib\rt4t_al.a</file>
+      <file>$TOOLKIT_DIR$\lib\dl4t_tln.a</file>
+      <file>$TOOLKIT_DIR$\lib\m4t_tl.a</file>
+      <file>$TOOLKIT_DIR$\config\generic.icf</file>
+      <file>$TOOLKIT_DIR$\lib\shs_l.a</file>
+      <file>D:\REGS.c</file>
     </outputs>
+    <file>
+      <name>$PROJ_DIR$\main.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 2</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 17</file>
+        </tool>
+      </outputs>
+    </file>
     <file>
       <name>$PROJ_DIR$\can_pbcfg.c</name>
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 24</file>
+          <file> 0</file>
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 22</file>
+          <file> 1</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 5 15 7 1 0 17</file>
+          <file> 19 5 20 21 13 12</file>
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 5 15 7 1 0 17</file>
+          <file> 19 5 20 21 13 12</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\cstartup_M.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 3</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 8</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Exe\c.out</name>
+      <inputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 29 7 1 8 14 17 30 26 28 27</file>
         </tool>
       </inputs>
     </file>
@@ -62,17 +102,21 @@
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 20</file>
+          <file> 4</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 7</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 5 15 7 1 0 17 6 9</file>
+          <file> 19 5 20 21 13 12 23 11</file>
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 5 15 7 1 0 17 6 9</file>
+          <file> 19 5 20 21 13 12 23 11</file>
         </tool>
       </inputs>
     </file>
@@ -81,63 +125,33 @@
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 11</file>
+          <file> 16</file>
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 3</file>
+          <file> 14</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 9 1 0 17</file>
+          <file> 11 21 13 12</file>
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 9 1 0 17</file>
+          <file> 11 21 13 12</file>
         </tool>
       </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\main.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 23</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 12</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\cstartup_M.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 21</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 10</file>
-        </tool>
-      </outputs>
     </file>
     <file>
       <name>[ROOT_NODE]</name>
       <outputs>
         <tool>
           <name>ILINK</name>
-          <file> 8</file>
+          <file> 15</file>
         </tool>
       </outputs>
     </file>
-    <forcedrebuild>
-      <name>[MULTI_TOOL]</name>
-      <tool>ILINK</tool>
-    </forcedrebuild>
   </configuration>
   <configuration>
     <name>Release</name>

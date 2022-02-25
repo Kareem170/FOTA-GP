@@ -41,7 +41,7 @@
 #define CAN_NOT_INIT_STATUS_SUCCEED          (1U)
 
 /* Configured CAN Address ( CAN1 OR CAN2 )*/
-#define CANX_BASE_ADDRESS                         (0x4000 6400)   
+#define CANX_BASE_ADDRESS                    (0x40006400)   
 
 /* CAN Master Control Register bits */
 #define MCR_DBF           ((uint32)0x00010000) /* software master reset */

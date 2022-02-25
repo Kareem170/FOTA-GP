@@ -74,7 +74,7 @@
 
 
 /* Service ID for Can_GetVersionInfo */
-#define CAN_VERSION_INFO_API                     (uint8)0x07
+#define CANVERSION_INFO_API                     (uint8)0x07
 
 
 /* Service ID for  Can_CheckBaudrate*/
