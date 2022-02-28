@@ -80,8 +80,7 @@ const Port_ConfigPin Port_Configuration[]={
 };
 
   
-/* configration to each pin in port
- * MC: STM32F40xx LQFP64 pinout
+/* configuration to each pin in port
  * */
 const Port_ConfigType Port_pinConfigurationSet = {{
 
@@ -133,8 +132,44 @@ const Port_ConfigType Port_pinConfigurationSet = {{
   NULL_PTR,														/* PORT_PC13 */
   NULL_PTR,														/* PORT_PC14 */
   NULL_PTR,														/* PORT_PC15 */
+#if (LQFP == 64)
   NULL_PTR,														/* PORT_PD2 */	/* PORTD */
   NULL_PTR,														/* PORT_PH0 */	/* PORTH */
   NULL_PTR,														/* PORT_PH1 */
-
+#elif (LQFP == 100)
+  NULL_PTR,														/* PORT_PD0 */	/* PORTD */
+  NULL_PTR,														/* PORT_PD1 */
+  NULL_PTR,														/* PORT_PD2 */
+  NULL_PTR,														/* PORT_PD3 */
+  NULL_PTR,														/* PORT_PD4 */
+  NULL_PTR,														/* PORT_PD5 */
+  NULL_PTR,														/* PORT_PD6 */
+  NULL_PTR,														/* PORT_PD7 */
+  NULL_PTR,														/* PORT_PD8 */
+  NULL_PTR,														/* PORT_PD9 */
+  NULL_PTR,														/* PORT_PD10 */
+  NULL_PTR,														/* PORT_PD11 */
+  NULL_PTR,														/* PORT_PD12 */
+  NULL_PTR,														/* PORT_PD13 */
+  NULL_PTR,														/* PORT_PD14 */
+  NULL_PTR,														/* PORT_PD15 */
+  NULL_PTR,														/* PORT_PE0 */	/* PORTE */
+  NULL_PTR,														/* PORT_PE1 */
+  NULL_PTR,														/* PORT_PE2 */
+  NULL_PTR,														/* PORT_PE3 */
+  NULL_PTR,														/* PORT_PE4 */
+  NULL_PTR,														/* PORT_PE5 */
+  NULL_PTR,														/* PORT_PE6 */
+  NULL_PTR,														/* PORT_PE7 */
+  NULL_PTR,														/* PORT_PE8 */
+  NULL_PTR,														/* PORT_PE9 */
+  NULL_PTR,														/* PORT_PE10 */
+  NULL_PTR,														/* PORT_PE11 */
+  NULL_PTR,														/* PORT_PE12 */
+  NULL_PTR,														/* PORT_PE13 */
+  NULL_PTR,														/* PORT_PE14 */
+  NULL_PTR,														/* PORT_PE15 */
+  NULL_PTR,														/* PORT_PH0 */	/* PORTH */
+  NULL_PTR,														/* PORT_PH1 */
+#endif
 }};

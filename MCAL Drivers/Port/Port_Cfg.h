@@ -28,7 +28,8 @@
 #define PORT_CFG_AR_RELEASE_MINOR_VERSION     (11U)
 #define PORT_CFG_AR_RELEASE_PATCH_VERSION     (0U)
 
-
+/* Pre-compile selection for MC number of pins */
+#define LQFP								(100)					/* 64 or 100 */
 
 /* Pre-compile option for Development Error Detect */
 #define PORT_DEV_ERROR_DETECT				(STD_OFF)

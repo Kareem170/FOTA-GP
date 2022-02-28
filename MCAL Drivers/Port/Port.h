@@ -84,10 +84,14 @@
 /* Number of Pins per Port of the MCU */
 #define NUM_OF_PINS_PER_PORT	(16U)
 
-/* Number of Pins per Port of the MCU */   /* STM32F40xx LQFP64 pinout */
+/* Number of Pins per Port of the MCU (MCU dependent)*/
+#if (LQFP == 64)													/* STM32F40xx LQFP64 pinout */
 #define PINS_OF_ALL_PORTS				(51U)
+#elif (LQFP == 100)													/* STM32F40xx LQFP100 pinout */
+#define PINS_OF_ALL_PORTS				(82U)
+#endif
 
-/* set IDs to portPinS */	/* STM32F40xx LQFP64 pinout */
+/* set IDs to portPinS (MCU dependent)*/
 enum  {
 	PORT_PA0, PORT_PA1, PORT_PA2, PORT_PA3, PORT_PA4, PORT_PA5, PORT_PA6, PORT_PA7,
 	PORT_PA8, PORT_PA9, PORT_PA10, PORT_PA11, PORT_PA12, PORT_PA13, PORT_PA14, PORT_PA15,
@@ -98,12 +102,23 @@ enum  {
 	PORT_PC0, PORT_PC1, PORT_PC2, PORT_PC3, PORT_PC4, PORT_PC5, PORT_PC6, PORT_PC7,
 	PORT_PC8, PORT_PC9, PORT_PC10, PORT_PC11, PORT_PC12, PORT_PC13, PORT_PC14, PORT_PC15,
 
+#if (LQFP == 64)
 	PORT_PD2,
 
 	PORT_PH0, PORT_PH1
+#elif (LQFP == 100)
+	PORT_PD0, PORT_PD1, PORT_PD2, PORT_PD3, PORT_PD4, PORT_PD5, PORT_PD6, PORT_PD7,
+	PORT_PD8, PORT_PD9, PORT_PD10, PORT_PD11, PORT_PD12, PORT_PD13, PORT_PD14, PORT_PD15,
+
+	PORT_PE0, PORT_PE1, PORT_PE2, PORT_PE3, PORT_PE4, PORT_PE5, PORT_PE6, PORT_PE7,
+	PORT_PE8, PORT_PE9, PORT_PE10, PORT_PE11, PORT_PE12, PORT_PE13, PORT_PE14, PORT_PE15,
+
+	PORT_PH0, PORT_PH1
+#endif
 };
+
 enum  {
-	PORTA, PORTB, PORTC, PORTD, PORTE, PORTF, PORTG, PORTH
+	PORTA, PORTB, PORTC, PORTD, PORTE, PORTF, PORTG, PORTH, PORTI
 };
 
 /*
@@ -294,7 +309,7 @@ void Port_SetPinMode( Port_PinType Pin, Port_PinModeType Mode );
  *                       External Variables                                    *
  *******************************************************************************/
 
-/* extern confg structure to be determined in the parent modules */
+/* extern config structure to be determined in the parent modules */
 extern const Port_ConfigType Port_pinConfigurationSet;
 
 

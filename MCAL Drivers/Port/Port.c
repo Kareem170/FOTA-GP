@@ -30,34 +30,60 @@
 /* port initial status */
 STATIC uint8 Port_Status = PORT_NOT_INITIALIZED;
 
-static uint8 getPortId(Port_PinType PinId_Port){
-	if ( PinId_Port < PORT_PD2 ) {				/* for STM32F40xx LQFP64 pin out */
-		return PinId_Port / NUM_OF_PINS_PER_PORT;
+static uint8 getPortId(Port_PinType PinId){
+#if (LQFP == 64)									/* for STM32F40xx LQFP64 pin out */
+	if ( PinId < PORT_PD2 ) {
+		return PinId / NUM_OF_PINS_PER_PORT;
 
-	}else if (PinId_Port == PORT_PD2){
+	}else if (PinId == PORT_PD2){
 		return PORTD;
 
 	}else{
 		return PORTH;
 	}
+
+#elif(LQFP == 100)									/* for STM32F40xx LQFP100 pin out */
+	if ( PinId < PORT_PH0 ) {
+		return PinId / NUM_OF_PINS_PER_PORT;
+
+	}else{
+		return PORTH;
+	}
+#endif
 }
 
 /* return pin position of the given PinId*/
-static uint8 getPinPos(Port_PinType PinId_Port){
-	if ( PinId_Port < PORT_PD2 ) {				/* for STM32F40xx LQFP64 pin out */
-		return PinId_Port % NUM_OF_PINS_PER_PORT;
+static uint8 getPinPos(Port_PinType PinId){
+#if (LQFP == 64)									/* for STM32F40xx LQFP64 pin out */
+	if ( PinId < PORT_PD2 ) {
+		return PinId % NUM_OF_PINS_PER_PORT;
 
-	}else if (PinId_Port == PORT_PD2){
+	}else if (PinId == PORT_PD2){
 		return 2;
 
 	}else{
-		if (PinId_Port == PORT_PH0){
+		if (PinId == PORT_PH0){
 			return 0;
 		}
-		else {								/* port PH1*/
+		else {								/* PH1*/
 			return 1;
 		}
 	}
+
+#elif(LQFP == 100)									/* for STM32F40xx LQFP100 pin out */
+	if ( PinId < PORT_PH0 ) {
+		return PinId % NUM_OF_PINS_PER_PORT;
+
+	}else{
+		if (PinId == PORT_PH0){
+			return 0;
+		}
+		else {										/* PH1*/
+			return 1;
+		}
+	}
+
+#endif
 }
 
 static volatile GPIO_TypeDef* getPortBasePtr(Port_PinType PinId_Port)
@@ -74,10 +100,17 @@ static volatile GPIO_TypeDef* getPortBasePtr(Port_PinType PinId_Port)
 		return (volatile GPIO_TypeDef *)GPIO_PORTC_BASE_ADDRESS; /* PORTC Base Address */
 	case  PORTD:
 		return (volatile GPIO_TypeDef *)GPIO_PORTD_BASE_ADDRESS; /* PORTD Base Address */
+	case  PORTE:
+		return (volatile GPIO_TypeDef *)GPIO_PORTE_BASE_ADDRESS; /* PORTD Base Address */
+	case  PORTF:
+		return (volatile GPIO_TypeDef *)GPIO_PORTF_BASE_ADDRESS; /* PORTD Base Address */
+	case  PORTG:
+		return (volatile GPIO_TypeDef *)GPIO_PORTG_BASE_ADDRESS; /* PORTD Base Address */
 	case  PORTH:
 		return (volatile GPIO_TypeDef *)GPIO_PORTH_BASE_ADDRESS; /* PORTH Base Address */
+	case  PORTI:
+		return (volatile GPIO_TypeDef *)GPIO_PORTI_BASE_ADDRESS; /* PORTH Base Address */
 	default:
-		/* if there's no such Port-PinId index in the MCU */
 		return NULL_PTR;
 	}
 }
