@@ -557,16 +557,16 @@ Dio_PortLevelType Dio_ReadPort( Dio_PortType PortId)
 	 		switch(ChannelGroupIdPtr->PortIndex)
 	 		 			 {
 	 		 			 case 0:
-	 		 			    Port_Ptr= &GPIO_PORTA_IDR_Reg;
+	 		 			    Port_Ptr= &GPIO_PORTA_Data_Reg;
 	 		 			    break;
 	 		 			    case 1:
-	 		 			    Port_Ptr= &GPIO_PORTB_IDR_Reg;
+	 		 			    Port_Ptr= &GPIO_PORTB_Data_Reg;
 	 		 			    break;
 	 		 			    case 2:
-	 		 			    Port_Ptr= &GPIO_PORTC_IDR_Reg;
+	 		 			    Port_Ptr= &GPIO_PORTC_Data_Reg;
 	 		 			    break;
 	 		 			    case 3:
-	 		 			    Port_Ptr= &GPIO_PORTD_IDR_Reg;
+	 		 			    Port_Ptr= &GPIO_PORTD_Data_Reg;
 	 		 			    break;
 	 		 			 }
 
