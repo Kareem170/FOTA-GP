@@ -463,9 +463,10 @@ Dio_PortLevelType Dio_ReadPort( Dio_PortType PortId)
  Dio_PortLevelType Dio_ReadChannelGroup(const Dio_ChannelGroupType* ChannelGroupIdPtr)
 
   {
-	 //volatile uint32 * Port_Ptr = NULL_PTR;
-    volatile uint32 Mask;
-    boolean error = FALSE;
+	 volatile uint32 * Port_Ptr = NULL_PTR;
+     volatile uint32 Mask;
+     volatile uint32 Shift;
+     boolean error = FALSE;
     #if (DIO_DEV_ERROR_DETECT == STD_ON)
  	/* Check if the Driver is initialized before using this function */
  	if (DIO_NOT_INITIALIZED == Dio_Status)
@@ -492,32 +493,37 @@ Dio_PortLevelType Dio_ReadPort( Dio_PortType PortId)
  	}
  #endif
 
-	 /* switch(ChannelGroupIdPtr->PortIndex)
-	 {
-	 case 0:
-	    Port_Ptr= &GPIO_PORTA_IDR_Reg;
-	    break;
-	    case 1:
-	    Port_Ptr= &GPIO_PORTB_IDR_Reg;
-	    break;
-	    case 2:
-	    Port_Ptr= &GPIO_PORTC_IDR_Reg;
-	    break;
-	    case 3:
-	    Port_Ptr= &GPIO_PORTD_IDR_Reg;
-	    break;
-	 }*/
+
 
 		//ChannelGroupIdPtr->offset;
 		 //ChannelGroupIdPtr++;
  	if(FALSE == error)
  	{
-       Mask= ChannelGroupIdPtr->mask &0xFF ;
+ 		  switch(ChannelGroupIdPtr->PortIndex)
+ 			 {
+ 			 case 0:
+ 			    Port_Ptr= &GPIO_PORTA_IDR_Reg;
+ 			    break;
+ 			    case 1:
+ 			    Port_Ptr= &GPIO_PORTB_IDR_Reg;
+ 			    break;
+ 			    case 2:
+ 			    Port_Ptr= &GPIO_PORTC_IDR_Reg;
+ 			    break;
+ 			    case 3:
+ 			    Port_Ptr= &GPIO_PORTD_IDR_Reg;
+ 			    break;
+ 			 }
+
+       Mask=(*Port_Ptr) & (ChannelGroupIdPtr->mask) ;
+       Shift= Mask>>(ChannelGroupIdPtr->offset);
     }
- 	return Mask>>(ChannelGroupIdPtr->offset);
+
+ 	   return Shift;
  }
  void Dio_WriteChannelGroup(const Dio_ChannelGroupType* ChannelGroupIdPtr, Dio_PortLevelType Level)
  {
+	 volatile uint32 * Port_Ptr = NULL_PTR;
 	 volatile uint32 Mask;
 	    boolean error = FALSE;
 	    #if (DIO_DEV_ERROR_DETECT == STD_ON)
@@ -545,13 +551,29 @@ Dio_PortLevelType Dio_ReadPort( Dio_PortType PortId)
 	 		/* No Action Required */
 	 	}
 	 #endif
-			//ChannelGroupIdPtr->offset;
-			 //ChannelGroupIdPtr++;
+
 	 	if(FALSE == error)
 	 	{
-	       Mask= ChannelGroupIdPtr->mask &0xFF ;
-	       Level=Mask>>(ChannelGroupIdPtr->offset);
-	    }
+	 		switch(ChannelGroupIdPtr->PortIndex)
+	 		 			 {
+	 		 			 case 0:
+	 		 			    Port_Ptr= &GPIO_PORTA_IDR_Reg;
+	 		 			    break;
+	 		 			    case 1:
+	 		 			    Port_Ptr= &GPIO_PORTB_IDR_Reg;
+	 		 			    break;
+	 		 			    case 2:
+	 		 			    Port_Ptr= &GPIO_PORTC_IDR_Reg;
+	 		 			    break;
+	 		 			    case 3:
+	 		 			    Port_Ptr= &GPIO_PORTD_IDR_Reg;
+	 		 			    break;
+	 		 			 }
+
+
+	 		 Mask=(*Port_Ptr) & (ChannelGroupIdPtr->mask) ;
+	 		 Level= Mask>>(ChannelGroupIdPtr->offset);
+	      }
 
  }
 
