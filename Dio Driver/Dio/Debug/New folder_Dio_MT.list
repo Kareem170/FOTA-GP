@@ -1,0 +1,93 @@
+
+New folder_Dio_MT.elf:     file format elf32-littlearm
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .init         0000000c  00008000  00008000  00008000  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .text         00000040  0000800c  0000800c  0000800c  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .fini         0000000c  0000804c  0000804c  0000804c  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  3 .eh_frame     00000004  00008058  00008058  00008058  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  4 .init_array   00000004  0001805c  0001805c  0000805c  2**2
+                  CONTENTS, ALLOC, LOAD, DATA
+  5 .fini_array   00000004  00018060  00018060  00008060  2**2
+                  CONTENTS, ALLOC, LOAD, DATA
+  6 .bss          0000001c  00018064  00018064  00008064  2**2
+                  ALLOC
+  7 .stab         000000cc  00000000  00000000  00008064  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  8 .stabstr      000001b9  00000000  00000000  00008130  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .comment      0000007c  00000000  00000000  000082e9  2**0
+                  CONTENTS, READONLY
+ 10 .debug_aranges 000000f8  00000000  00000000  00008365  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_info   000011e7  00000000  00000000  0000845d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_abbrev 0000040a  00000000  00000000  00009644  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 13 .debug_line   00000498  00000000  00000000  00009a4e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 14 .debug_frame  00000c80  00000000  00000000  00009ee8  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 15 .debug_str    000004a2  00000000  00000000  0000ab68  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 16 .debug_loc    0000089b  00000000  00000000  0000b00a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 17 .debug_ranges 000000b0  00000000  00000000  0000b8a5  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 18 .ARM.attributes 0000002a  00000000  00000000  0000b955  2**0
+                  CONTENTS, READONLY
+
+Disassembly of section .init:
+
+00008000 <_init>:
+    8000:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
+    8002:	bf00      	nop
+    8004:	bcf8      	pop	{r3, r4, r5, r6, r7}
+    8006:	bc08      	pop	{r3}
+    8008:	469e      	mov	lr, r3
+    800a:	4770      	bx	lr
+
+Disassembly of section .text:
+
+0000800c <__do_global_dtors_aux>:
+    800c:	b510      	push	{r4, lr}
+    800e:	4c05      	ldr	r4, [pc, #20]	; (8024 <__do_global_dtors_aux+0x18>)
+    8010:	7823      	ldrb	r3, [r4, #0]
+    8012:	b933      	cbnz	r3, 8022 <__do_global_dtors_aux+0x16>
+    8014:	4b04      	ldr	r3, [pc, #16]	; (8028 <__do_global_dtors_aux+0x1c>)
+    8016:	b113      	cbz	r3, 801e <__do_global_dtors_aux+0x12>
+    8018:	4804      	ldr	r0, [pc, #16]	; (802c <__do_global_dtors_aux+0x20>)
+    801a:	f3af 8000 	nop.w
+    801e:	2301      	movs	r3, #1
+    8020:	7023      	strb	r3, [r4, #0]
+    8022:	bd10      	pop	{r4, pc}
+    8024:	00018064 	.word	0x00018064
+    8028:	00000000 	.word	0x00000000
+    802c:	00008058 	.word	0x00008058
+
+00008030 <frame_dummy>:
+    8030:	b508      	push	{r3, lr}
+    8032:	4b03      	ldr	r3, [pc, #12]	; (8040 <frame_dummy+0x10>)
+    8034:	b11b      	cbz	r3, 803e <frame_dummy+0xe>
+    8036:	4903      	ldr	r1, [pc, #12]	; (8044 <frame_dummy+0x14>)
+    8038:	4803      	ldr	r0, [pc, #12]	; (8048 <frame_dummy+0x18>)
+    803a:	f3af 8000 	nop.w
+    803e:	bd08      	pop	{r3, pc}
+    8040:	00000000 	.word	0x00000000
+    8044:	00018068 	.word	0x00018068
+    8048:	00008058 	.word	0x00008058
+
+Disassembly of section .fini:
+
+0000804c <_fini>:
+    804c:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
+    804e:	bf00      	nop
+    8050:	bcf8      	pop	{r3, r4, r5, r6, r7}
+    8052:	bc08      	pop	{r3}
+    8054:	469e      	mov	lr, r3
+    8056:	4770      	bx	lr

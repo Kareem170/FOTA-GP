@@ -1,0 +1,9 @@
+Dio.c:39:6:Dio_Init	8	static
+Dio.c:72:6:Dio_WriteChannel	8	static
+Dio.c:151:15:Dio_ReadChannel	8	static
+Dio.c:231:6:Dio_GetVersionInfo	8	static
+Dio.c:270:15:Dio_FlipChannel	8	static
+Dio.c:350:19:Dio_ReadPort	8	static
+Dio.c:410:7:Dio_WritePort	8	static
+Dio.c:463:20:Dio_ReadChannelGroup	16	static
+Dio.c:519:7:Dio_WriteChannelGroup	16	static
