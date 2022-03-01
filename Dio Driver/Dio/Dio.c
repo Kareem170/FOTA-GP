@@ -397,7 +397,7 @@ Dio_PortLevelType Dio_ReadPort( Dio_PortType PortId)
   }
 }
     //read the required port
-   return Port_Ptr;
+   return *Port_Ptr;
 }
 
 
@@ -455,7 +455,7 @@ Dio_PortLevelType Dio_ReadPort( Dio_PortType PortId)
     Port_Ptr= &GPIO_PORTD_Data_Reg;
     break;
     //write the required port
-    Port_Ptr = Level;
+    *Port_Ptr = Level;
   }
 
 }
