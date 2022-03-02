@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Workspace>
+  <ConfigDictionary>
+    
+  <CurrentConfigs><Project>Dio_MT/Debug</Project></CurrentConfigs></ConfigDictionary>
+  <Desktop>
+    <Static>
+      <Workspace>
+        <ColumnWidths>
+          
+          
+          
+          
+        <Column0>223</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
+      </Workspace>
+      <Build>
+        
+        
+        
+        
+      <PreferedWindows><Position>3</Position><ScreenPosX>0</ScreenPosX><ScreenPosY>0</ScreenPosY><Windows><Window><Factory>Debug-Log</Factory></Window></Windows></PreferedWindows><ColumnWidth0>26</ColumnWidth0><ColumnWidth1>1871</ColumnWidth1><ColumnWidth2>499</ColumnWidth2><ColumnWidth3>124</ColumnWidth3></Build>
+      <TerminalIO/>
+    <Debug-Log><ColumnWidth0>24</ColumnWidth0><ColumnWidth1>2497</ColumnWidth1><PreferedWindows><Position>3</Position><ScreenPosX>0</ScreenPosX><ScreenPosY>0</ScreenPosY><Windows><Window><Factory>Build</Factory></Window></Windows></PreferedWindows></Debug-Log></Static>
+    <Windows>
+      
+      
+    <Wnd2>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-3996-1278</Identity>
+            <TabName>Workspace</TabName>
+            <Factory>Workspace</Factory>
+            <Session>
+              
+            <NodeDict><ExpandedNode>Dio_MT</ExpandedNode></NodeDict></Session>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd2><Wnd3><Tabs><Tab><Identity>TabID-17534-31351</Identity><TabName>Build</TabName><Factory>Build</Factory><Session/></Tab></Tabs><SelectedTab>0</SelectedTab></Wnd3></Windows>
+    <Editor>
+      
+      
+      
+      
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\Dio.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>71</YPos2><SelStart2>2311</SelStart2><SelEnd2>2311</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\Platform_Types.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>60</YPos2><SelStart2>2713</SelStart2><SelEnd2>2713</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\Std_Types.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>35</YPos2><SelStart2>1990</SelStart2><SelEnd2>1990</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\Common_Macros.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>5</YPos2><SelStart2>1198</SelStart2><SelEnd2>1198</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\Dio_PBcfg.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>0</YPos2><SelStart2>14</SelStart2><SelEnd2>14</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\Dio_Cfg.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>35</YPos2><SelStart2>2234</SelStart2><SelEnd2>2234</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\Det.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>42</YPos2><SelStart2>2328</SelStart2><SelEnd2>2328</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Dio_MT_Student\tm4c123gh6pm_registers.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>70</YPos2><SelStart2>3940</SelStart2><SelEnd2>3940</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\Compiler.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>30</YPos2><SelStart2>1749</SelStart2><SelEnd2>1749</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\Det.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>0</YPos2><SelStart2>0</SelStart2><SelEnd2>0</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\stm32f4xx.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>70</YPos2><SelStart2>2845</SelStart2><SelEnd2>2845</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\tm4c123gh6pm_registers.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>185</YPos2><SelStart2>12606</SelStart2><SelEnd2>12606</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\Dio_Regs.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>24</YPos2><SelStart2>2035</SelStart2><SelEnd2>2035</SelEnd2></Tab><ActiveTab>12</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\Dio.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>318</YPos2><SelStart2>10433</SelStart2><SelEnd2>10433</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\main.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>0</YPos2><SelStart2>719</SelStart2><SelEnd2>719</SelEnd2></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-053F2A40><key>iaridepm.enu1</key></Toolbar-053F2A40></Sizes></Row0></Top><Left><Row0><Sizes><Wnd2><Rect><Top>-2</Top><Left>-2</Left><Bottom>452</Bottom><Right>297</Right><x>-2</x><y>-2</y><xscreen>107</xscreen><yscreen>102</yscreen><sizeHorzCX>78331</sizeHorzCX><sizeHorzCY>146763</sizeHorzCY><sizeVertCX>218887</sizeVertCX><sizeVertCY>653237</sizeVertCY></Rect></Wnd2></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd3><Rect><Top>-2</Top><Left>-2</Left><Bottom>198</Bottom><Right>1368</Right><x>-2</x><y>-2</y><xscreen>1370</xscreen><yscreen>200</yscreen><sizeHorzCX>1002928</sizeHorzCX><sizeHorzCY>287770</sizeHorzCY><sizeVertCX>146413</sizeVertCX><sizeVertCY>287770</sizeVertCY></Rect></Wnd3></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+  </Desktop>
+</Workspace>
+
+
