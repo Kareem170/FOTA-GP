@@ -1,0 +1,9 @@
+Project: New folder_Dio_MT
+Converter: IARProjectParser
+Date: 20220224
+
+Project needs GCC compatible startup code and linker script
+Debug: ATTENTION: Failed to determine FPU core for the device: DeviceInfo [vendorName=Texas Instruments, mcuName=TM4C123GH6PM], MCU information uncertain.
+Debug: ATTENTION: Failed to determine FPU core for the device: DeviceInfo [vendorName=Texas Instruments, mcuName=TM4C123GH6PM], MCU information uncertain.
+Release: FPU set to none.
+Release: ATTENTION: Failed to determine FPU core for the device: DeviceInfo [vendorName=None, mcuName=default], MCU information uncertain.
