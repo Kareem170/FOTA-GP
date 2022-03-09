@@ -186,7 +186,7 @@ void Port_Init( const Port_ConfigType* ConfigPtr )
 				if(PinConfig.mode == PORT_DIO_MODE){
 					if(PinConfig.direction == PORT_PIN_OUT){																/*!< Output direction*/
 						GPIOx_Ptr->MODER  &= ~(GPIO_MODER_MODER0 << (PinPos * CONFG_PINS_P_PORT_2));							/*!< Clear old configurations in MODER for PORT_Pin */
-						GPIOx_Ptr->MODER |= ((uint32_t)GPIO_Mode_OUT << (PinPos * CONFG_PINS_P_PORT_2));						/*!< Set new configurations in MODER for PORT_Pin as GPIO OUT */
+						GPIOx_Ptr->MODER |= ((uint32)GPIO_Mode_OUT << (PinPos * CONFG_PINS_P_PORT_2));						/*!< Set new configurations in MODER for PORT_Pin as GPIO OUT */
 
 						if(PinConfig.initial_value == STD_LOW){
 							SET_BIT((GPIOx_Ptr->BSRRH), PinPos);          													/*!< At initial value Low setBit at Reset_Register(BSRRH) to Reset */
@@ -196,23 +196,23 @@ void Port_Init( const Port_ConfigType* ConfigPtr )
 
 					}else {																									/*!< Input direction default */
 						GPIOx_Ptr->MODER  &= ~(GPIO_MODER_MODER0 << (PinPos * CONFG_PINS_P_PORT_2));							/*!< Clear old configurations in MODER for PORT_Pin */
-						GPIOx_Ptr->MODER |= ((uint32_t)GPIO_Mode_IN << (PinPos * CONFG_PINS_P_PORT_2));						/*!< Set new configurations in MODER for PORT_Pin as GPIO IN*/
+						GPIOx_Ptr->MODER |= ((uint32)GPIO_Mode_IN << (PinPos * CONFG_PINS_P_PORT_2));						/*!< Set new configurations in MODER for PORT_Pin as GPIO IN*/
 
 					}
 
 				}else if(PinConfig.mode == PORT_ANALOG_MODE){
 					GPIOx_Ptr->MODER  &= ~(GPIO_MODER_MODER0 << (PinPos * CONFG_PINS_P_PORT_2));								/*!< Clear old configurations in MODER for PORT_Pin */
-					GPIOx_Ptr->MODER |= ((uint32_t)GPIO_Mode_AN << (PinPos * CONFG_PINS_P_PORT_2));							/*!< Set new configurations in MODER for PORT_Pin as Analog */
+					GPIOx_Ptr->MODER |= ((uint32)GPIO_Mode_AN << (PinPos * CONFG_PINS_P_PORT_2));							/*!< Set new configurations in MODER for PORT_Pin as Analog */
 
 				}else if(PinConfig.mode <= PORT_ALTERNATE_FUNCTION_15_MODE){
 					if(PinPos < 8){
-						GPIOx_Ptr->AFR[0]	&= ~((uint32_t)PinConfig.mode << (PinPos * CONFG_PINS_P_PORT_4));				/*!< Set Alternate Function Register Low for pin(0:7) */
+						GPIOx_Ptr->AFR[0]	&= ~((uint32)PinConfig.mode << (PinPos * CONFG_PINS_P_PORT_4));				/*!< Set Alternate Function Register Low for pin(0:7) */
 					} else {
-						GPIOx_Ptr->AFR[1]	&= ~((uint32_t)PinConfig.mode << (PinPos * CONFG_PINS_P_PORT_4));				/*!< Set Alternate Function Register High for pin(8:15) */
+						GPIOx_Ptr->AFR[1]	&= ~((uint32)PinConfig.mode << (PinPos * CONFG_PINS_P_PORT_4));				/*!< Set Alternate Function Register High for pin(8:15) */
 					}
 
 					GPIOx_Ptr->MODER  &= ~(GPIO_MODER_MODER0 << (PinPos * CONFG_PINS_P_PORT_2));								/*!< Clear old configurations in MODER for PORT_Pin */
-					GPIOx_Ptr->MODER |= ((uint32_t)(GPIO_Mode_AF) << (PinPos * CONFG_PINS_P_PORT_2));						/*!< Set new configurations in MODER for PORT_Pin as Alternate Function */
+					GPIOx_Ptr->MODER |= ((uint32)(GPIO_Mode_AF) << (PinPos * CONFG_PINS_P_PORT_2));						/*!< Set new configurations in MODER for PORT_Pin as Alternate Function */
 				} /* End Mode configurations */
 
 
@@ -223,11 +223,11 @@ void Port_Init( const Port_ConfigType* ConfigPtr )
 
 					/* Speed mode configuration */
 					GPIOx_Ptr->OSPEEDR &= ~(GPIO_OSPEEDER_OSPEEDR0 << (PinPos * CONFG_PINS_P_PORT_2));						/*!< Clear old configurations in OSPEEDR for PORT_Pin */
-					GPIOx_Ptr->OSPEEDR |= ((uint32_t)(PinConfig.GPIO_Speed) << (PinPos * CONFG_PINS_P_PORT_2));				/*!< Set new configurations in OSPEEDR for PORT_Pin */
+					GPIOx_Ptr->OSPEEDR |= ((uint32)(PinConfig.GPIO_Speed) << (PinPos * CONFG_PINS_P_PORT_2));				/*!< Set new configurations in OSPEEDR for PORT_Pin */
 
 					/* Output mode configuration*/
-					GPIOx_Ptr->OTYPER  &= ~((GPIO_OTYPER_OT_0) << ((uint16_t)PinPos)) ;										/*!< Clear old configurations in OTYPER for PORT_Pin */
-					GPIOx_Ptr->OTYPER |= (uint16_t)(((uint16_t)PinConfig.GPIO_OType) << ((uint16_t)PinPos));					/*!< Set new configurations in OTYPER for PORT_Pin */
+					GPIOx_Ptr->OTYPER  &= ~((GPIO_OTYPER_OT_0) << ((uint16)PinPos)) ;										/*!< Clear old configurations in OTYPER for PORT_Pin */
+					GPIOx_Ptr->OTYPER |= (uint16)(((uint16)PinConfig.GPIO_OType) << ((uint16)PinPos));					/*!< Set new configurations in OTYPER for PORT_Pin */
 
 #if (PORT_COMPENSATION_CELL == STD_ON)
 					if (GPIO_Speed_50MHz == PinConfig.GPIO_Speed || GPIO_Speed_100MHz == PinConfig.GPIO_Speed){				/*!< Compensation cell recommended at 50MHz speed or more */
@@ -246,8 +246,8 @@ void Port_Init( const Port_ConfigType* ConfigPtr )
 				}/* End of OutputType & Speed configurations */
 
 				/* Pull-up Pull down resistor configuration !<note its disabled for analog mode by hardware */
-				GPIOx_Ptr->PUPDR &= ~(GPIO_PUPDR_PUPDR0 << ((uint16_t)PinPos * CONFG_PINS_P_PORT_2));						/*!< Clear old configurations in PUPDR for PORT_Pin */
-				GPIOx_Ptr->PUPDR |= (((uint32_t)PinConfig.GPIO_PuPd) << (PinPos * CONFG_PINS_P_PORT_2));					/*!< Set new configurations in PUPDR for PORT_Pin */
+				GPIOx_Ptr->PUPDR &= ~(GPIO_PUPDR_PUPDR0 << ((uint16)PinPos * CONFG_PINS_P_PORT_2));						/*!< Clear old configurations in PUPDR for PORT_Pin */
+				GPIOx_Ptr->PUPDR |= (((uint32)PinConfig.GPIO_PuPd) << (PinPos * CONFG_PINS_P_PORT_2));					/*!< Set new configurations in PUPDR for PORT_Pin */
 
 			}  /* end of  if GPIOx_Ptr not null_ptr */
 		} /* end of  if PinConfig not null_ptr */
@@ -309,7 +309,7 @@ void Port_SetPinDirection( Port_PinType PinId, Port_PinDirectionType Direction )
 	GPIOx_Ptr = getPortBasePtr(PinId);
 	if (NULL_PTR != GPIOx_Ptr){
 
-		if (0 == (GPIOx_Ptr->MODER & ((uint32_t)GPIO_MODER_MODER0_1 << (PinPos * CONFG_PINS_P_PORT_2)))){					/*!< Check if it is GPIO now (not Analog nor AF) to set direction */
+		if (0 == (GPIOx_Ptr->MODER & ((uint32)GPIO_MODER_MODER0_1 << (PinPos * CONFG_PINS_P_PORT_2)))){					/*!< Check if it is GPIO now (not Analog nor AF) to set direction */
 
 			if (Port_pinConfigurationSet.Pins[PinId] != NULL_PTR){																	/*!< Check if PinId is configured */
 				if ((Port_pinConfigurationSet.Pins[PinId])->direction_change == UNCHANGEABLE){										/*!< Check if it is Direction Changeable */
@@ -319,10 +319,10 @@ void Port_SetPinDirection( Port_PinType PinId, Port_PinDirectionType Direction )
 
 			if(Direction == PORT_PIN_IN){
 				GPIOx_Ptr->MODER  &= ~(GPIO_MODER_MODER0 << (PinPos * CONFG_PINS_P_PORT_2));							/*!< Clear old configurations in MODER for PORT_Pin */
-				GPIOx_Ptr->MODER |= ((uint32_t)GPIO_Mode_IN << (PinPos * CONFG_PINS_P_PORT_2));							/*!< Set new configurations in MODER for PORT_Pin as GPIO IN*/
+				GPIOx_Ptr->MODER |= ((uint32)GPIO_Mode_IN << (PinPos * CONFG_PINS_P_PORT_2));							/*!< Set new configurations in MODER for PORT_Pin as GPIO IN*/
 			}else{
 				GPIOx_Ptr->MODER  &= ~(GPIO_MODER_MODER0 << (PinPos * CONFG_PINS_P_PORT_2));							/*!< Clear old configurations in MODER for PORT_Pin */
-				GPIOx_Ptr->MODER |= ((uint32_t)GPIO_Mode_OUT << (PinPos * CONFG_PINS_P_PORT_2));						/*!< Set new configurations in MODER for PORT_Pin as GPIO OUT */
+				GPIOx_Ptr->MODER |= ((uint32)GPIO_Mode_OUT << (PinPos * CONFG_PINS_P_PORT_2));						/*!< Set new configurations in MODER for PORT_Pin as GPIO OUT */
 			}
 
 		}/* end of gpio checking */
@@ -366,15 +366,15 @@ void Port_RefreshPortDirection( void ){
 		if (Port_pinConfigurationSet.Pins[Pin_Index] != NULL_PTR){																	/*!< Check if PinId is configured */
 			if (NULL_PTR != GPIOx_Ptr){
 
-				if (0 == (GPIOx_Ptr->MODER & ((uint32_t)GPIO_MODER_MODER0_1 << (PinPos * CONFG_PINS_P_PORT_2)))){					/*!< Check if it is GPIO now (not Analog or AF) to set direction */
+				if (0 == (GPIOx_Ptr->MODER & ((uint32)GPIO_MODER_MODER0_1 << (PinPos * CONFG_PINS_P_PORT_2)))){					/*!< Check if it is GPIO now (not Analog or AF) to set direction */
 
 					if ((Port_pinConfigurationSet.Pins[Pin_Index])->direction_change == CHANGEABLE){								/*!< Check if it is Direction Changeable */
 						if((Port_pinConfigurationSet.Pins[Pin_Index])->direction == PORT_PIN_IN){
 							GPIOx_Ptr->MODER  &= ~(GPIO_MODER_MODER0 << (PinPos * CONFG_PINS_P_PORT_2));						/*!< Clear old configurations in MODER for PORT_Pin */
-							GPIOx_Ptr->MODER |= ((uint32_t)GPIO_Mode_IN << (PinPos * CONFG_PINS_P_PORT_2));						/*!< Set new configurations in MODER for PORT_Pin as GPIO IN*/
+							GPIOx_Ptr->MODER |= ((uint32)GPIO_Mode_IN << (PinPos * CONFG_PINS_P_PORT_2));						/*!< Set new configurations in MODER for PORT_Pin as GPIO IN*/
 						}else{
 							GPIOx_Ptr->MODER  &= ~(GPIO_MODER_MODER0 << (PinPos * CONFG_PINS_P_PORT_2));						/*!< Clear old configurations in MODER for PORT_Pin */
-							GPIOx_Ptr->MODER |= ((uint32_t)GPIO_Mode_OUT << (PinPos * CONFG_PINS_P_PORT_2));					/*!< Set new configurations in MODER for PORT_Pin as GPIO OUT */
+							GPIOx_Ptr->MODER |= ((uint32)GPIO_Mode_OUT << (PinPos * CONFG_PINS_P_PORT_2));					/*!< Set new configurations in MODER for PORT_Pin as GPIO OUT */
 						}
 					}/* end of changeable checking */
 
@@ -494,25 +494,25 @@ void Port_SetPinMode( Port_PinType PinId, Port_PinModeType Mode ){
 			if(Mode == PORT_DIO_MODE){
 				if(PinConfig.direction == PORT_PIN_IN){
 					GPIOx_Ptr->MODER  &= ~(GPIO_MODER_MODER0 << (PinPos * CONFG_PINS_P_PORT_2));							/*!< Clear old configurations in MODER for PORT_Pin */
-					GPIOx_Ptr->MODER |= ((uint32_t)GPIO_Mode_IN << (PinPos * CONFG_PINS_P_PORT_2));							/*!< Set new configurations in MODER for PORT_Pin as GPIO IN*/
+					GPIOx_Ptr->MODER |= ((uint32)GPIO_Mode_IN << (PinPos * CONFG_PINS_P_PORT_2));							/*!< Set new configurations in MODER for PORT_Pin as GPIO IN*/
 				}else{
 					GPIOx_Ptr->MODER  &= ~(GPIO_MODER_MODER0 << (PinPos * CONFG_PINS_P_PORT_2));							/*!< Clear old configurations in MODER for PORT_Pin */
-					GPIOx_Ptr->MODER |= ((uint32_t)GPIO_Mode_OUT << (PinPos * CONFG_PINS_P_PORT_2));						/*!< Set new configurations in MODER for PORT_Pin as GPIO OUT */
+					GPIOx_Ptr->MODER |= ((uint32)GPIO_Mode_OUT << (PinPos * CONFG_PINS_P_PORT_2));						/*!< Set new configurations in MODER for PORT_Pin as GPIO OUT */
 				}
 
 			}else if(Mode == PORT_ANALOG_MODE){
 				GPIOx_Ptr->MODER  &= ~(GPIO_MODER_MODER0 << (PinPos * CONFG_PINS_P_PORT_2));								/*!< Clear old configurations in MODER for PORT_Pin */
-				GPIOx_Ptr->MODER |= ((uint32_t)GPIO_Mode_AN << (PinPos * CONFG_PINS_P_PORT_2));								/*!< Set new configurations in MODER for PORT_Pin as Analog */
+				GPIOx_Ptr->MODER |= ((uint32)GPIO_Mode_AN << (PinPos * CONFG_PINS_P_PORT_2));								/*!< Set new configurations in MODER for PORT_Pin as Analog */
 
 			}else if(Mode <= PORT_ALTERNATE_FUNCTION_15_MODE){
 				if(PinPos < 8){
-					GPIOx_Ptr->AFR[0]	&= ~((uint32_t)Mode << (PinPos * CONFG_PINS_P_PORT_4));							/*!< Set Alternate Function Register Low for pin(0:7) */
+					GPIOx_Ptr->AFR[0]	&= ~((uint32)Mode << (PinPos * CONFG_PINS_P_PORT_4));							/*!< Set Alternate Function Register Low for pin(0:7) */
 				} else {
-					GPIOx_Ptr->AFR[1]	&= ~((uint32_t)Mode << (PinPos * CONFG_PINS_P_PORT_4));							/*!< Set Alternate Function Register High for pin(8:15) */
+					GPIOx_Ptr->AFR[1]	&= ~((uint32)Mode << (PinPos * CONFG_PINS_P_PORT_4));							/*!< Set Alternate Function Register High for pin(8:15) */
 				}
 
 				GPIOx_Ptr->MODER  &= ~(GPIO_MODER_MODER0 << (PinPos * CONFG_PINS_P_PORT_2));								/*!< Clear old configurations in MODER for PORT_Pin */
-				GPIOx_Ptr->MODER |= ((uint32_t)(GPIO_Mode_AF) << (PinPos * CONFG_PINS_P_PORT_2));							/*!< Set new configurations in MODER for PORT_Pin as Alternate Function */
+				GPIOx_Ptr->MODER |= ((uint32)(GPIO_Mode_AF) << (PinPos * CONFG_PINS_P_PORT_2));							/*!< Set new configurations in MODER for PORT_Pin as Alternate Function */
 			}
 			/* End Mode configurations */
 
@@ -523,11 +523,11 @@ void Port_SetPinMode( Port_PinType PinId, Port_PinModeType Mode ){
 
 				/* Speed mode configuration */
 				GPIOx_Ptr->OSPEEDR &= ~(GPIO_OSPEEDER_OSPEEDR0 << (PinPos * CONFG_PINS_P_PORT_2));						/*!< Clear old configurations in OSPEEDR for PORT_Pin */
-				GPIOx_Ptr->OSPEEDR |= ((uint32_t)(PinConfig.GPIO_Speed) << (PinPos * CONFG_PINS_P_PORT_2));				/*!< Set new configurations in OSPEEDR for PORT_Pin */
+				GPIOx_Ptr->OSPEEDR |= ((uint32)(PinConfig.GPIO_Speed) << (PinPos * CONFG_PINS_P_PORT_2));				/*!< Set new configurations in OSPEEDR for PORT_Pin */
 
 				/* Output mode configuration*/
-				GPIOx_Ptr->OTYPER  &= ~((GPIO_OTYPER_OT_0) << ((uint16_t)PinPos)) ;										/*!< Clear old configurations in OTYPER for PORT_Pin */
-				GPIOx_Ptr->OTYPER |= (uint16_t)(((uint16_t)PinConfig.GPIO_OType) << ((uint16_t)PinPos));					/*!< Set new configurations in OTYPER for PORT_Pin */
+				GPIOx_Ptr->OTYPER  &= ~((GPIO_OTYPER_OT_0) << ((uint16)PinPos)) ;										/*!< Clear old configurations in OTYPER for PORT_Pin */
+				GPIOx_Ptr->OTYPER |= (uint16)(((uint16)PinConfig.GPIO_OType) << ((uint16)PinPos));					/*!< Set new configurations in OTYPER for PORT_Pin */
 
 #if (PORT_COMPENSATION_CELL == STD_ON)
 				if (GPIO_Speed_50MHz == PinConfig.GPIO_Speed || GPIO_Speed_100MHz == PinConfig.GPIO_Speed){				/*!< Compensation cell recommended at 50MHz speed or more */
@@ -551,21 +551,21 @@ void Port_SetPinMode( Port_PinType PinId, Port_PinModeType Mode ){
 
 			if(Mode == PORT_DIO_MODE){
 				GPIOx_Ptr->MODER  &= ~(GPIO_MODER_MODER0 << (PinPos * CONFG_PINS_P_PORT_2));								/*!< Clear old configurations in MODER for PORT_Pin */
-				GPIOx_Ptr->MODER |= ((uint32_t)GPIO_Mode_IN << (PinPos * CONFG_PINS_P_PORT_2));								/*!< Set new configurations in MODER for PORT_Pin as GPIO IN*/
+				GPIOx_Ptr->MODER |= ((uint32)GPIO_Mode_IN << (PinPos * CONFG_PINS_P_PORT_2));								/*!< Set new configurations in MODER for PORT_Pin as GPIO IN*/
 
 			}else if(Mode == PORT_ANALOG_MODE){
 				GPIOx_Ptr->MODER  &= ~(GPIO_MODER_MODER0 << (PinPos * CONFG_PINS_P_PORT_2));								/*!< Clear old configurations in MODER for PORT_Pin */
-				GPIOx_Ptr->MODER |= ((uint32_t)GPIO_Mode_AN << (PinPos * CONFG_PINS_P_PORT_2));								/*!< Set new configurations in MODER for PORT_Pin as Analog */
+				GPIOx_Ptr->MODER |= ((uint32)GPIO_Mode_AN << (PinPos * CONFG_PINS_P_PORT_2));								/*!< Set new configurations in MODER for PORT_Pin as Analog */
 
 			}else if(Mode <= PORT_ALTERNATE_FUNCTION_15_MODE){
 				if(PinPos < 8){
-					GPIOx_Ptr->AFR[0]	&= ~((uint32_t)Mode << (PinPos * CONFG_PINS_P_PORT_4));								/*!< Set Alternate Function Register Low for pin(0:7) */
+					GPIOx_Ptr->AFR[0]	&= ~((uint32)Mode << (PinPos * CONFG_PINS_P_PORT_4));								/*!< Set Alternate Function Register Low for pin(0:7) */
 				} else {
-					GPIOx_Ptr->AFR[1]	&= ~((uint32_t)Mode << (PinPos * CONFG_PINS_P_PORT_4));								/*!< Set Alternate Function Register High for pin(8:15) */
+					GPIOx_Ptr->AFR[1]	&= ~((uint32)Mode << (PinPos * CONFG_PINS_P_PORT_4));								/*!< Set Alternate Function Register High for pin(8:15) */
 				}
 
 				GPIOx_Ptr->MODER  &= ~(GPIO_MODER_MODER0 << (PinPos * CONFG_PINS_P_PORT_2));								/*!< Clear old configurations in MODER for PORT_Pin */
-				GPIOx_Ptr->MODER |= ((uint32_t)(GPIO_Mode_AF) << (PinPos * CONFG_PINS_P_PORT_2));							/*!< Set new configurations in MODER for PORT_Pin as Alternate Function */
+				GPIOx_Ptr->MODER |= ((uint32)(GPIO_Mode_AF) << (PinPos * CONFG_PINS_P_PORT_2));							/*!< Set new configurations in MODER for PORT_Pin as Alternate Function */
 			}
 		}
 
