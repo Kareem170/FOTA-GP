@@ -44,13 +44,19 @@
 #define DioConf_SW2_CHANNEL_ID_INDEX         (uint8)0x03
 
 /* DIO Configured Port ID's  */
-#define DioConf_LED1_PORT_NUM                (Dio_PortType)5 /* PORTF */
+#define DioConf_LED1_PORT_NUM                (Dio_PortType)0/* PORTA*/
 #define DioConf_LED2_PORT_NUM                (Dio_PortType)5 /* PORTF */
 #define DioConf_SW1_PORT_NUM                 (Dio_PortType)5 /* PORTF */
 #define DioConf_SW2_PORT_NUM                 (Dio_PortType)5 /* PORTF */
+#define DioConf_PORT_A                       (Dio_PortType)1 /*PORTA*/
+#define DioConf_PORT_B                       (Dio_PortType)2 /*PORTB*/
+#define DioConf_PORT_C                       (Dio_PortType)3 /*PORTC*/
+#define DioConf_PORT_D                       (Dio_PortType)4 /*PORTD*/
+#define DioConf_PORT_E                       (Dio_PortType)5 /*PORTE*/
+
 
 /* DIO Configured Channel ID's */
-#define DioConf_LED1_CHANNEL_NUM             (Dio_ChannelType)1 /* Pin 1 in PORTF */
+#define DioConf_LED1_CHANNEL_NUM             (Dio_ChannelType)0 /* Pin 1 in PORTA */
 #define DioConf_LED2_CHANNEL_NUM             (Dio_ChannelType)2 /* Pin 2 in PORTF */
 #define DioConf_SW1_CHANNEL_NUM              (Dio_ChannelType)4 /* Pin 0 in PORTF */
 #define DioConf_SW2_CHANNEL_NUM              (Dio_ChannelType)0 /* Pin 0 in PORTF */

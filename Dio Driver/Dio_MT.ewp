@@ -99,7 +99,7 @@
         </option>
         <option>
           <name>OGChipSelectEditMenu</name>
-          <state>TM4C123GH6PM	TexasInstruments TM4C123GH6PM</state>
+          <state>STM32F407VE	ST STM32F407VE</state>
         </option>
         <option>
           <name>GenLowLevelInterface</name>
