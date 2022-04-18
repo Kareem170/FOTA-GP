@@ -48,7 +48,8 @@
 typedef enum
 {
 	DIOIN_PP_NOPULL, DIO_DEFAULT=0,				                /*!< Default DIOIN */
-	DIOOUT_PP_NOPULL,							/*!< PP: Push-Pull,	2M: Speed in Hz*/
+	DIOOUT_NOPULL,							        /*!< PP: Push-Pull,	2M: Speed in Hz*/
+        CAN_MODE,
 	DIOIN_OD,								/*!< OD: Open Drain*/
 	DIOIN_OD_PU,								/*!< PU: PullUp,	PD: PullDp */
 	DIOOUT_CONSTM_CONSTD_PU,						/*!< CONSTM: constant Mode, CONSTD: constant Direction */
@@ -73,9 +74,10 @@ typedef enum
  */
 const Port_ConfigPin Port_Configuration[]={
   
-  {PORT_DIO_MODE, CHANGEABLE, PORT_PIN_IN,  CHANGEABLE, No_Pull, OType_PP, STD_LOW, GPIO_Speed_2MHz},     /* DIO_DEFAULT */
-  {PORT_DIO_MODE, CHANGEABLE, PORT_PIN_OUT, CHANGEABLE, No_Pull, OType_PP, STD_LOW, GPIO_Speed_2MHz},     /* DIOOUT_PP_NOPULL_2M */
-  
+  {PORT_DIO_MODE, CHANGEABLE, PORT_PIN_IN,  CHANGEABLE, No_Pull, OType_PP, STD_LOW, GPIO_Speed_2MHz},   /* DIOIN_NOPULL */
+  {PORT_DIO_MODE, CHANGEABLE, PORT_PIN_OUT, CHANGEABLE, No_Pull, OType_PP, STD_LOW, GPIO_Speed_2MHz},   /* DIOOUT_NOPULL */
+  {PORT_CAN_MODE, CHANGEABLE, PORT_PIN_OUT, CHANGEABLE, No_Pull, OType_PP, STD_LOW, GPIO_Speed_2MHz},        /* CAN_MODE */
+
   
 };
 
@@ -97,9 +99,9 @@ const Port_ConfigType Port_pinConfigurationSet = {{
   &Port_Configuration[DIO_DEFAULT],						/* PORT_PA10 */
   &Port_Configuration[DIO_DEFAULT],						/* PORT_PA11 */
   &Port_Configuration[DIO_DEFAULT],						/* PORT_PA12 */
-  &Port_Configuration[DIO_DEFAULT],						/* PORT_PA13 */
-  NULL_PTR,									/* PORT_PA14 */	/* if nullptr will do nothing (MC default) */
-  NULL_PTR,				       					/* PORT_PA15 */
+  NULL_PTR,						                        /* PORT_PA13 */ /* JTAG */
+  NULL_PTR,									/* PORT_PA14 */	/* JTAG */      /* if nullptr will do nothing (MC default) */
+  NULL_PTR,				       					/* PORT_PA15 */ /* JTAG */
   NULL_PTR,							        	/* PORT_PB0 */	/* PORTB */
   NULL_PTR,									/* PORT_PB1 */
   NULL_PTR,									/* PORT_PB2 */

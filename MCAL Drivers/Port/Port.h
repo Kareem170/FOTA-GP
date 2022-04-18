@@ -53,13 +53,13 @@
 #if ((PORT_CFG_AR_RELEASE_MAJOR_VERSION != PORT_AR_RELEASE_MAJOR_VERSION)\
  ||  (PORT_CFG_AR_RELEASE_MINOR_VERSION != PORT_AR_RELEASE_MINOR_VERSION)\
  ||  (PORT_CFG_AR_RELEASE_PATCH_VERSION != PORT_AR_RELEASE_PATCH_VERSION))
-//  #error "The AR version of Port_Cfg.h does not match the expected version"
+  #error "The AR version of Port_Cfg.h does not match the expected version"
 #endif
 /* Software Version checking between Port_Cfg.h and Port.h files */
 #if ((PORT_CFG_SW_MAJOR_VERSION != PORT_SW_MAJOR_VERSION)\
  ||  (PORT_CFG_SW_MINOR_VERSION != PORT_SW_MINOR_VERSION)\
  ||  (PORT_CFG_SW_PATCH_VERSION != PORT_SW_PATCH_VERSION))
-//  #error "The SW version of Port_Cfg.h does not match the expected version"
+  #error "The SW version of Port_Cfg.h does not match the expected version"
 #endif
 
 
@@ -131,7 +131,7 @@ enum  {
 #define PORT_ALTERNATE_FUNCTION_06_MODE         (6U)
 #define PORT_ALTERNATE_FUNCTION_07_MODE         (7U)
 #define PORT_ALTERNATE_FUNCTION_08_MODE         (8U)
-#define CAN_MODE                                (9U)                            /*< PORT_ALTERNATE_FUNCTION_09_MODE>*/
+#define PORT_CAN_MODE                           (9U)                            /*< PORT_ALTERNATE_FUNCTION_09_MODE>*/
 #define PORT_ALTERNATE_FUNCTION_10_MODE         (10U)
 #define PORT_ALTERNATE_FUNCTION_11_MODE         (11U)
 #define PORT_ALTERNATE_FUNCTION_12_MODE         (12U)
