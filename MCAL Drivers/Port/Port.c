@@ -232,7 +232,7 @@ void Port_Init( const Port_ConfigType* ConfigPtr ){
                                           GPIOx_Ptr->AFR[0]	|= ((uint32)PinConfig.mode << (PinPos * CONFG_PINS_P_PORT_4));				/*!< Set Alternate Function Register Low for pin(0:7) */
 
                                   } else {
-                                          GPIOx_Ptr->AFR[1]	&= ~((uint32)GPIO_AFR_MASK_4BITS << (PinPos * CONFG_PINS_P_PORT_4));				/*!< claer Alternate Function Register High for pin(8:15) */
+                                          GPIOx_Ptr->AFR[1]	&= ~((uint32)GPIO_AFR_MASK_4BITS << (PinPos * CONFG_PINS_P_PORT_4));				/*!< clear Alternate Function Register High for pin(8:15) */
                                           GPIOx_Ptr->AFR[1]	|= ((uint32)PinConfig.mode << (PinPos * CONFG_PINS_P_PORT_4));				/*!< Set Alternate Function Register High for pin(8:15) */
 
                                   }
