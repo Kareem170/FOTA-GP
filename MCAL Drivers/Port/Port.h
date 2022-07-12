@@ -122,20 +122,20 @@ enum  {
 * macros for pin different Modes,
 * assigned to mode of type Port_PinModeType */
 /* Alternate function for 4Bits(MCU)  */
-#define PORT_ALTERNATE_FUNCTION_00_MODE         (0U)
-#define PORT_ALTERNATE_FUNCTION_01_MODE         (1U)
-#define PORT_ALTERNATE_FUNCTION_02_MODE         (2U)
-#define PORT_ALTERNATE_FUNCTION_03_MODE         (3U)
-#define PORT_ALTERNATE_FUNCTION_04_MODE         (4U)
-#define PORT_ALTERNATE_FUNCTION_05_MODE         (5U)
-#define PORT_ALTERNATE_FUNCTION_06_MODE         (6U)
-#define PORT_ALTERNATE_FUNCTION_07_MODE         (7U)
-#define PORT_ALTERNATE_FUNCTION_08_MODE         (8U)
-#define PORT_CAN_MODE                           (9U)                            /*< PORT_ALTERNATE_FUNCTION_09_MODE>*/
-#define PORT_ALTERNATE_FUNCTION_10_MODE         (10U)
-#define PORT_ALTERNATE_FUNCTION_11_MODE         (11U)
-#define PORT_ALTERNATE_FUNCTION_12_MODE         (12U)
-#define PORT_ALTERNATE_FUNCTION_13_MODE         (13U)
+#define PORT_ALTERNATE_FUNCTION_00_MODE         (0U)                            /*!< SYS>*/
+#define PORT_ALTERNATE_FUNCTION_01_MODE         (1U)                            /*!< TIM 1/2>*/
+#define PORT_ALTERNATE_FUNCTION_02_MODE         (2U)                            /*!< TIM 3/4/5>*/
+#define PORT_ALTERNATE_FUNCTION_03_MODE         (3U)                            /*!< TIM 8/9/10/11>*/
+#define PORT_ALTERNATE_FUNCTION_04_MODE         (4U)                            /*!< I2C 1/2/3>*/
+#define PORT_ALTERNATE_FUNCTION_05_MODE         (5U)                            /*!< SPI1/SPI2/ I2S2/I2S2ext>*/
+#define PORT_ALTERNATE_FUNCTION_06_MODE         (6U)                            /*!< SPI3/ I2Sext/I2S3>*/
+#define PORT_ALTERNATE_FUNCTION_07_MODE         (7U)                            /*!< USART1/2/3/ I2S3ext>*/
+#define PORT_ALTERNATE_FUNCTION_08_MODE         (8U)                            /*!< UART4/5/ USART6>*/
+#define PORT_ALTERNATE_FUNCTION_09_MODE         (9U)                            /*!< CAN1/2 TIM12/13/14>*/
+#define PORT_ALTERNATE_FUNCTION_10_MODE         (10U)                           /*!< OTG_FS/OTG_HS>*/
+#define PORT_ALTERNATE_FUNCTION_11_MODE         (11U)                           /*!< ETH>*/
+#define PORT_ALTERNATE_FUNCTION_12_MODE         (12U)                           /*!< FSMC/SDIO /OTG_FS>*/
+#define PORT_ALTERNATE_FUNCTION_13_MODE         (13U)                           /*!< DCMI>*/
 #define PORT_ALTERNATE_FUNCTION_14_MODE         (14U)
 #define PORT_ALTERNATE_FUNCTION_15_MODE         (15U)
 
@@ -147,13 +147,13 @@ enum  {
  *                      API Service Id Macros                                 *
  ******************************************************************************/
 /* fn1. PORT_init ID service */
-#define PORT_INIT_SID						(uint8)0x00
+#define PORT_INIT_SID					(uint8)0x00
 
 /* fn2. PORT_set_pin_direction ID service */
 #define PORT_SET_PIN_DIRECTION_SID			(uint8)0x01
 
 /* fn3. PORT_refresh_pin_direction ID service */
-#define PORT_REFRESH_PORT_DIRECTION_SID		(uint8)0x02
+#define PORT_REFRESH_PORT_DIRECTION_SID	                (uint8)0x02
 
 /* fn4. PORT_get_version_info ID service */
 #define PORT_GET_VERSION_INFO_SID			(uint8)0x03
@@ -166,25 +166,25 @@ enum  {
  *                      DET Error Codes                                        *
  *******************************************************************************/
 /* DET Code for Invalid Port Pin ID requested */
-#define PORT_E_PARAM_PIN                  (uint8)0x0A
+#define PORT_E_PARAM_PIN                        (uint8)0x0A
 
 /* DET Code for Port Pin not configured as changeable */
-#define PORT_E_DIRECTION_UNCHANGEABLE     (uint8)0x0B
+#define PORT_E_DIRECTION_UNCHANGEABLE           (uint8)0x0B
 
 /* DET Code for API Port_Init service called with wrong parameter */
-#define PORT_E_INIT_FAILED               (uint8)0x0C
+#define PORT_E_INIT_FAILED                      (uint8)0x0C
 
 /* DET Code for API Port_SetPinMode service called with wrong parameter Mode */
-#define PORT_E_PARAM_INVALID_MODE         (uint8)0x0D
+#define PORT_E_PARAM_INVALID_MODE               (uint8)0x0D
 
 /* DET Code for API Port_SetPinMode service called when mode is unchangeable */
-#define PORT_E_MODE_UNCHANGEABLE          (uint8)0x0E
+#define PORT_E_MODE_UNCHANGEABLE                (uint8)0x0E
 
 /* DET Code for API service called without module initialization */
-#define PORT_E_UNINIT                     (uint8)0x0F
+#define PORT_E_UNINIT                           (uint8)0x0F
 
 /* DET Code for APIs called with a Null Pointer */
-#define PORT_E_PARAM_POINTER              (uint8)0x10
+#define PORT_E_PARAM_POINTER                    (uint8)0x10
 
 
 /*******************************************************************************

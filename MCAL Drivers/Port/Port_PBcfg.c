@@ -42,14 +42,21 @@
 
 
 #define NULL_PTR          ((void *)0)
+#define PORT_CAN_MODE                           (9U)                            /*!< PORT_ALTERNATE_FUNCTION_09_MODE*/
+
 
 
 /* predefined configs for the pin */
 typedef enum
 {
-	DIOIN_PP_NOPULL, DIO_DEFAULT=0,				                /*!< Default DIOIN */
+	DIOIN_NOPULL, DIO_DEFAULT=0,				                /*!< Default DIOIN */
 	DIOOUT_NOPULL,							        /*!< PP: Push-Pull,	2M: Speed in Hz*/
-        CAN_MODE,
+        Testing_LCD,
+        CAN_MODE = 3,
+        
+        
+        
+        
 	DIOIN_OD,								/*!< OD: Open Drain*/
 	DIOIN_OD_PU,								/*!< PU: PullUp,	PD: PullDp */
 	DIOOUT_CONSTM_CONSTD_PU,						/*!< CONSTM: constant Mode, CONSTD: constant Direction */
@@ -65,7 +72,7 @@ typedef enum
  * array of struct  Port_ConfigPin which element is
                     1. mode                                                                                                     !<GP Input initially>
                     2. mode changeable						
-                    3. direction                                                                                                !<mode dependent (GP IN initially) >
+                    3. direction                                                !<only for dio>                                 !<mode dependent (GP IN initially) >
                     4. direction changeable
                     6. pullUp/Down                                                                                              !<No_Pull  initially>                   < No_Pull, Pull_Up, Pull_Down >
                     5. output Type						!< don't cares in analog or input modes>        !<PushPull initially>                   < OType_PP,  OType_OD >
@@ -76,7 +83,8 @@ const Port_ConfigPin Port_Configuration[]={
   
   {PORT_DIO_MODE, CHANGEABLE, PORT_PIN_IN,  CHANGEABLE, No_Pull, OType_PP, STD_LOW, GPIO_Speed_2MHz},   /* DIOIN_NOPULL */
   {PORT_DIO_MODE, CHANGEABLE, PORT_PIN_OUT, CHANGEABLE, No_Pull, OType_PP, STD_LOW, GPIO_Speed_2MHz},   /* DIOOUT_NOPULL */
-  {PORT_CAN_MODE, CHANGEABLE, PORT_PIN_OUT, CHANGEABLE, No_Pull, OType_PP, STD_LOW, GPIO_Speed_2MHz},        /* CAN_MODE */
+  {PORT_DIO_MODE, CHANGEABLE, PORT_PIN_OUT, CHANGEABLE, No_Pull, OType_PP, STD_LOW, GPIO_Speed_2MHz},   /* testing lcd */
+  {PORT_CAN_MODE, CHANGEABLE, PORT_PIN_OUT, CHANGEABLE, No_Pull, OType_PP, STD_LOW, GPIO_Speed_2MHz},   /* CAN_MODE */
 
   
 };
@@ -86,17 +94,17 @@ const Port_ConfigPin Port_Configuration[]={
  * */
 const Port_ConfigType Port_pinConfigurationSet = {{
 
-  &Port_Configuration[DIO_DEFAULT],						/* PORT_PA0 */ /* PORTA */
-  &Port_Configuration[DIO_DEFAULT],						/* PORT_PA1 */
-  &Port_Configuration[DIO_DEFAULT],						/* PORT_PA2 */
-  &Port_Configuration[DIO_DEFAULT],						/* PORT_PA3 */
-  &Port_Configuration[DIO_DEFAULT],						/* PORT_PA4 */
-  &Port_Configuration[DIO_DEFAULT],						/* PORT_PA5 */
-  &Port_Configuration[DIO_DEFAULT],						/* PORT_PA6 */
-  &Port_Configuration[DIO_DEFAULT],						/* PORT_PA7 */
-  &Port_Configuration[DIO_DEFAULT],						/* PORT_PA8 */
-  &Port_Configuration[DIO_DEFAULT],						/* PORT_PA9 */
-  &Port_Configuration[DIO_DEFAULT],						/* PORT_PA10 */
+  &Port_Configuration[Testing_LCD],						/* PORT_PA0 */ /* PORTA */
+  &Port_Configuration[Testing_LCD],						/* PORT_PA1 */
+  &Port_Configuration[Testing_LCD],						/* PORT_PA2 */
+  &Port_Configuration[Testing_LCD],						/* PORT_PA3 */
+  &Port_Configuration[Testing_LCD],						/* PORT_PA4 */
+  &Port_Configuration[Testing_LCD],						/* PORT_PA5 */
+  &Port_Configuration[Testing_LCD],						/* PORT_PA6 */
+  &Port_Configuration[Testing_LCD],						/* PORT_PA7 */
+  &Port_Configuration[Testing_LCD],						/* PORT_PA8 */
+  &Port_Configuration[Testing_LCD],						/* PORT_PA9 */
+  &Port_Configuration[Testing_LCD],						/* PORT_PA10 */
   &Port_Configuration[DIO_DEFAULT],						/* PORT_PA11 */
   &Port_Configuration[DIO_DEFAULT],						/* PORT_PA12 */
   NULL_PTR,						                        /* PORT_PA13 */ /* JTAG */
@@ -139,8 +147,8 @@ const Port_ConfigType Port_pinConfigurationSet = {{
   NULL_PTR,									/* PORT_PH0 */	/* PORTH */
   NULL_PTR,									/* PORT_PH1 */
 #elif (LQFP == 100)
-  NULL_PTR,									/* PORT_PD0 */	/* PORTD */
-  NULL_PTR,									/* PORT_PD1 */
+  &Port_Configuration[CAN_MODE],						/* PORT_PD0 */	/* PORTD */
+  &Port_Configuration[CAN_MODE],						/* PORT_PD1 */
   NULL_PTR,									/* PORT_PD2 */
   NULL_PTR,									/* PORT_PD3 */
   NULL_PTR,									/* PORT_PD4 */
