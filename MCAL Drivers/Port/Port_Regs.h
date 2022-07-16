@@ -59,6 +59,8 @@
 /*******************************************************************************
  *                            General Purpose I/O                              *
  ******************************************************************************/
+#define GPIO_AFR_MASK_4BITS                      (0xf)
+
 /******************  Bits definition for GPIO_MODER register  *****************/
 #define GPIO_MODER_MODER0                    ((uint32)0x00000003)
 #define GPIO_MODER_MODER0_0                  ((uint32)0x00000001)
