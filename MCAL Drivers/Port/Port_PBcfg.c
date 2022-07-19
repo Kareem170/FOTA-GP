@@ -43,6 +43,7 @@
 
 #define NULL_PTR          ((void *)0)
 #define PORT_CAN_MODE                           (9U)                            /*!< PORT_ALTERNATE_FUNCTION_09_MODE*/
+#define PORT_USART1_MODE                        (7U)                            /*!< PORT_ALTERNATE_FUNCTION_07_MODE*/
 
 
 
@@ -51,9 +52,10 @@ typedef enum
 {
 	DIOIN_NOPULL, DIO_DEFAULT=0,				                /*!< Default DIOIN */
 	DIOOUT_NOPULL,							        /*!< PP: Push-Pull,	2M: Speed in Hz*/
-        Testing_LCD,
-        CAN_MODE = 3,
-        
+	Testing_lED,
+	CAN_MODE = 3,
+	USART1 = 4,
+	LCD = 5,
         
         
         
@@ -81,10 +83,12 @@ typedef enum
  */
 const Port_ConfigPin Port_Configuration[]={
   
-  {PORT_DIO_MODE, CHANGEABLE, PORT_PIN_IN,  CHANGEABLE, No_Pull, OType_PP, STD_LOW, GPIO_Speed_2MHz},   /* DIOIN_NOPULL */
-  {PORT_DIO_MODE, CHANGEABLE, PORT_PIN_OUT, CHANGEABLE, No_Pull, OType_PP, STD_LOW, GPIO_Speed_2MHz},   /* DIOOUT_NOPULL */
-  {PORT_DIO_MODE, CHANGEABLE, PORT_PIN_OUT, CHANGEABLE, No_Pull, OType_PP, STD_LOW, GPIO_Speed_2MHz},   /* testing lcd */
-  {PORT_CAN_MODE, CHANGEABLE, PORT_PIN_OUT, CHANGEABLE, No_Pull, OType_PP, STD_LOW, GPIO_Speed_2MHz},   /* CAN_MODE */
+  {PORT_DIO_MODE, CHANGEABLE, PORT_PIN_IN,  CHANGEABLE, No_Pull, OType_PP, STD_LOW, GPIO_Speed_2MHz},           /* Initial status */ /* DIOIN_NOPULL */
+  {PORT_DIO_MODE, CHANGEABLE, PORT_PIN_OUT, CHANGEABLE, No_Pull, OType_PP, STD_HIGH, GPIO_Speed_2MHz},           /* DIOOUT_NOPULL */
+  {PORT_DIO_MODE, CHANGEABLE, PORT_PIN_OUT, CHANGEABLE, No_Pull, OType_PP, STD_HIGH, GPIO_Speed_2MHz},           /* testing led */
+  {PORT_CAN_MODE, CHANGEABLE, PORT_PIN_OUT, CHANGEABLE, No_Pull, OType_PP, STD_LOW, GPIO_Speed_2MHz},           /* CAN_MODE */
+  {PORT_USART1_MODE, UNCHANGEABLE, PORT_PIN_IN,  UNCHANGEABLE, No_Pull, OType_PP, STD_HIGH, GPIO_Speed_2MHz},     /* USART1 */
+  {PORT_DIO_MODE, UNCHANGEABLE, PORT_PIN_OUT,  UNCHANGEABLE, No_Pull, OType_PP, STD_LOW, GPIO_Speed_2MHz}           /* LCD */
 
   
 };
@@ -94,30 +98,30 @@ const Port_ConfigPin Port_Configuration[]={
  * */
 const Port_ConfigType Port_pinConfigurationSet = {{
 
-  &Port_Configuration[Testing_LCD],						/* PORT_PA0 */ /* PORTA */
-  &Port_Configuration[Testing_LCD],						/* PORT_PA1 */
-  &Port_Configuration[Testing_LCD],						/* PORT_PA2 */
-  &Port_Configuration[Testing_LCD],						/* PORT_PA3 */
-  &Port_Configuration[Testing_LCD],						/* PORT_PA4 */
-  &Port_Configuration[Testing_LCD],						/* PORT_PA5 */
-  &Port_Configuration[Testing_LCD],						/* PORT_PA6 */
-  &Port_Configuration[Testing_LCD],						/* PORT_PA7 */
-  &Port_Configuration[Testing_LCD],						/* PORT_PA8 */
-  &Port_Configuration[Testing_LCD],						/* PORT_PA9 */
-  &Port_Configuration[Testing_LCD],						/* PORT_PA10 */
-  &Port_Configuration[DIO_DEFAULT],						/* PORT_PA11 */
-  &Port_Configuration[DIO_DEFAULT],						/* PORT_PA12 */
-  NULL_PTR,						                        /* PORT_PA13 */ /* JTAG */
+  &Port_Configuration[Testing_lED],                     /* PORT_PA0 */ /* PORTA */
+  NULL_PTR,                     						/* PORT_PA1 */
+  NULL_PTR,                     						/* PORT_PA2 */
+  NULL_PTR,                     						/* PORT_PA3 */
+  NULL_PTR,                     						/* PORT_PA4 */
+  NULL_PTR,                     						/* PORT_PA5 */
+  NULL_PTR,                     						/* PORT_PA6 */
+  NULL_PTR,                     						/* PORT_PA7 */
+  &Port_Configuration[USART1],						/* PORT_PA8 */
+  &Port_Configuration[USART1],						/* PORT_PA9 */
+  &Port_Configuration[USART1],						/* PORT_PA10 */
+  &Port_Configuration[USART1],						/* PORT_PA11 */
+  &Port_Configuration[USART1],						/* PORT_PA12 */
+  NULL_PTR,						            /* PORT_PA13 */ /* JTAG */
   NULL_PTR,									/* PORT_PA14 */	/* JTAG */      /* if nullptr will do nothing (MC default) */
-  NULL_PTR,				       					/* PORT_PA15 */ /* JTAG */
-  NULL_PTR,							        	/* PORT_PB0 */	/* PORTB */
-  NULL_PTR,									/* PORT_PB1 */
-  NULL_PTR,									/* PORT_PB2 */
-  NULL_PTR,									/* PORT_PB3 */
-  NULL_PTR,									/* PORT_PB4 */
-  NULL_PTR,									/* PORT_PB5 */
-  NULL_PTR,									/* PORT_PB6 */
-  NULL_PTR,									/* PORT_PB7 */
+  NULL_PTR,				       				/* PORT_PA15 */ /* JTAG */
+  NULL_PTR,									/* PORT_PB0 */	/* PORTB */
+  &Port_Configuration[LCD],									/* PORT_PB1 */
+  &Port_Configuration[LCD],									/* PORT_PB2 */
+  &Port_Configuration[LCD],									/* PORT_PB3 */
+  &Port_Configuration[LCD],									/* PORT_PB4 */
+  &Port_Configuration[LCD],									/* PORT_PB5 */
+  &Port_Configuration[LCD],									/* PORT_PB6 */
+  &Port_Configuration[LCD],									/* PORT_PB7 */
   NULL_PTR,									/* PORT_PB8 */
   NULL_PTR,									/* PORT_PB9 */
   NULL_PTR,									/* PORT_PB10 */
@@ -126,13 +130,13 @@ const Port_ConfigType Port_pinConfigurationSet = {{
   NULL_PTR,									/* PORT_PB13 */
   NULL_PTR,									/* PORT_PB14 */
   NULL_PTR,									/* PORT_PB15 */
-  NULL_PTR,									/* PORT_PC0 */	/* PORTC */
-  NULL_PTR,									/* PORT_PC1 */
-  NULL_PTR,									/* PORT_PC2 */
+  &Port_Configuration[LCD],									/* PORT_PC0 */	/* PORTC */
+  &Port_Configuration[LCD],									/* PORT_PC1 */
+  &Port_Configuration[LCD],									/* PORT_PC2 */
   NULL_PTR,									/* PORT_PC3 */
   NULL_PTR,									/* PORT_PC4 */
   NULL_PTR,									/* PORT_PC5 */
-  NULL_PTR,								        /* PORT_PC6 */
+  NULL_PTR,								    /* PORT_PC6 */
   NULL_PTR,									/* PORT_PC7 */
   NULL_PTR,									/* PORT_PC8 */
   NULL_PTR,									/* PORT_PC9 */
