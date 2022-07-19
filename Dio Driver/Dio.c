@@ -105,7 +105,7 @@ void Dio_WriteChannel(Dio_ChannelType ChannelId, Dio_LevelType Level)
 		/* Point to the correct PORT register according to the Port Id stored in the Port_Num member */
 		switch(Dio_PortChannels[ChannelId].Port_Num)
 		{
-            case 0:    Port_Ptr = &GPIO_PORTA_Data_Reg;
+                    case 0:    Port_Ptr = &GPIO_PORTA_Data_Reg;
 		               break;
 		    case 1:    Port_Ptr = &GPIO_PORTB_Data_Reg;
 		               break;
@@ -113,9 +113,15 @@ void Dio_WriteChannel(Dio_ChannelType ChannelId, Dio_LevelType Level)
 		               break;
 		    case 3:    Port_Ptr = &GPIO_PORTD_Data_Reg;
 		               break;
-            case 4:    Port_Ptr = &GPIO_PORTE_Data_Reg;
+                    case 4:    Port_Ptr = &GPIO_PORTE_Data_Reg;
 		               break;
-            case 5:    Port_Ptr = &GPIO_PORTF_Data_Reg;
+                    case 5:    Port_Ptr = &GPIO_PORTF_Data_Reg;
+		               break;
+                    case 6:    Port_Ptr = &GPIO_PORTG_Data_Reg;
+		               break;
+                    case 7:    Port_Ptr = &GPIO_PORTH_Data_Reg;
+		               break;
+                    case 8:    Port_Ptr = &GPIO_PORTI_Data_Reg;
 		               break;
 		}
 		if(Level == STD_HIGH)
@@ -185,17 +191,23 @@ Dio_LevelType Dio_ReadChannel(Dio_ChannelType ChannelId)
 		/* Point to the correct PORT register according to the Port Id stored in the Port_Num member */
 		switch(Dio_PortChannels[ChannelId].Port_Num)
 		{
-            case 0:    Port_Ptr = &GPIO_PORTA_Data_Reg;
+                    case 0:    Port_Ptr = &GPIO_PORTA_IDR_Reg;
 		               break;
-		    case 1:    Port_Ptr = &GPIO_PORTB_Data_Reg;
+		    case 1:    Port_Ptr = &GPIO_PORTB_IDR_Reg;
 		               break;
-		    case 2:    Port_Ptr = &GPIO_PORTC_Data_Reg;
+		    case 2:    Port_Ptr = &GPIO_PORTC_IDR_Reg;
 		               break;
-		    case 3:    Port_Ptr = &GPIO_PORTD_Data_Reg;
+		    case 3:    Port_Ptr = &GPIO_PORTD_IDR_Reg;
 		               break;
-            case 4:    Port_Ptr = &GPIO_PORTE_Data_Reg;
+                    case 4:    Port_Ptr = &GPIO_PORTE_IDR_Reg;
 		               break;
-            case 5:    Port_Ptr = &GPIO_PORTF_Data_Reg;
+                    case 5:    Port_Ptr = &GPIO_PORTF_IDR_Reg;
+		               break;
+                    case 6:    Port_Ptr = &GPIO_PORTG_IDR_Reg;
+		               break;
+                    case 7:    Port_Ptr = &GPIO_PORTH_IDR_Reg;
+		               break;
+                    case 8:    Port_Ptr = &GPIO_PORTI_IDR_Reg;
 		               break;
 		}
 		/* Read the required channel */
@@ -304,7 +316,7 @@ Dio_LevelType Dio_FlipChannel(Dio_ChannelType ChannelId)
 		/* Point to the correct PORT register according to the Port Id stored in the Port_Num member */
 		switch(Dio_PortChannels[ChannelId].Port_Num)
 		{
-            case 0:    Port_Ptr = &GPIO_PORTA_Data_Reg;
+                    case 0:    Port_Ptr = &GPIO_PORTA_Data_Reg;
 		               break;
 		    case 1:    Port_Ptr = &GPIO_PORTB_Data_Reg;
 		               break;
@@ -312,9 +324,15 @@ Dio_LevelType Dio_FlipChannel(Dio_ChannelType ChannelId)
 		               break;
 		    case 3:    Port_Ptr = &GPIO_PORTD_Data_Reg;
 		               break;
-            case 4:    Port_Ptr = &GPIO_PORTE_Data_Reg;
+                    case 4:    Port_Ptr = &GPIO_PORTE_Data_Reg;
 		               break;
-            case 5:    Port_Ptr = &GPIO_PORTF_Data_Reg;
+                    case 5:    Port_Ptr = &GPIO_PORTF_Data_Reg;
+		               break;
+                    case 6:    Port_Ptr = &GPIO_PORTG_Data_Reg;
+		               break;
+                    case 7:    Port_Ptr = &GPIO_PORTH_Data_Reg;
+		               break;
+                    case 8:    Port_Ptr = &GPIO_PORTI_Data_Reg;
 		               break;
 		}
 		/* Read the required channel and write the required level */
@@ -349,6 +367,7 @@ Dio_LevelType Dio_FlipChannel(Dio_ChannelType ChannelId)
 Dio_PortLevelType Dio_ReadPort( Dio_PortType PortId)
 {
 	volatile uint32 * Port_Ptr = NULL_PTR;
+        Dio_PortLevelType output = STD_LOW;
   //volatile GPIO_TypeDef * Port_Ptr = NULL_PTR;
   //volatile GPIO_TypeDef *Port_Ptr = NULL_PTR;
    boolean error = FALSE;
@@ -393,10 +412,27 @@ Dio_PortLevelType Dio_ReadPort( Dio_PortType PortId)
     case 3:
     Port_Ptr= &GPIO_PORTB_IDR_Reg;
     break;
+    case 6:   
+    Port_Ptr = &GPIO_PORTG_IDR_Reg;
+    break;
+    case 7:    
+    Port_Ptr = &GPIO_PORTH_IDR_Reg;
+    break;
+    case 8:    
+    Port_Ptr = &GPIO_PORTI_IDR_Reg;
+    break;
   }
 }
     //read the required port
-   return *Port_Ptr;
+   if(*Port_Ptr == DioConf_LED1_PORT_NUM )
+   {
+    output = *Port_Ptr;
+   }
+   else
+   { 
+     output=0;
+   }
+    return  output;
 }
 
 
@@ -453,10 +489,20 @@ Dio_PortLevelType Dio_ReadPort( Dio_PortType PortId)
     case 3:
     Port_Ptr= &GPIO_PORTD_Data_Reg;
     break;
-    //write the required port
-    *Port_Ptr = Level;
+    case 6:   
+    Port_Ptr = &GPIO_PORTG_Data_Reg;
+    break;
+    case 7:    
+    Port_Ptr = &GPIO_PORTH_Data_Reg;
+    break;
+    case 8:    
+    Port_Ptr = &GPIO_PORTI_Data_Reg;
+    break;
+    
+    
   }
-
+  //write the required port
+  *Port_Ptr = Level;
 }
 }
  Dio_PortLevelType Dio_ReadChannelGroup(const Dio_ChannelGroupType* ChannelGroupIdPtr)
@@ -500,7 +546,7 @@ Dio_PortLevelType Dio_ReadPort( Dio_PortType PortId)
  	{
  		  switch(ChannelGroupIdPtr->PortIndex)
  			 {
- 			 case 0:
+ 			    case 0:
  			    Port_Ptr= &GPIO_PORTA_IDR_Reg;
  			    break;
  			    case 1:
@@ -512,6 +558,15 @@ Dio_PortLevelType Dio_ReadPort( Dio_PortType PortId)
  			    case 3:
  			    Port_Ptr= &GPIO_PORTD_IDR_Reg;
  			    break;
+                            case 6:    
+                            Port_Ptr = &GPIO_PORTG_IDR_Reg;
+		            break;
+                            case 7:    
+                            Port_Ptr = &GPIO_PORTH_IDR_Reg;
+		            break;
+                            case 8:    
+                            Port_Ptr = &GPIO_PORTI_IDR_Reg;
+		            break;
  			 }
 
        Mask=(*Port_Ptr) & (ChannelGroupIdPtr->mask) ;
@@ -555,7 +610,7 @@ Dio_PortLevelType Dio_ReadPort( Dio_PortType PortId)
 	 	{
 	 		switch(ChannelGroupIdPtr->PortIndex)
 	 		 			 {
-	 		 			 case 0:
+	 		 			    case 0:
 	 		 			    Port_Ptr= &GPIO_PORTA_Data_Reg;
 	 		 			    break;
 	 		 			    case 1:
@@ -567,6 +622,15 @@ Dio_PortLevelType Dio_ReadPort( Dio_PortType PortId)
 	 		 			    case 3:
 	 		 			    Port_Ptr= &GPIO_PORTD_Data_Reg;
 	 		 			    break;
+                                                    case 6:   
+                                                    Port_Ptr = &GPIO_PORTG_Data_Reg;
+		                                    break;
+                                                    case 7:    
+                                                    Port_Ptr = &GPIO_PORTH_Data_Reg;
+		                                    break;
+                                                    case 8:    
+                                                    Port_Ptr = &GPIO_PORTI_Data_Reg;
+		                                    break;
 	 		 			 }
 
 
